@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kota Permai Judo Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --c:#F0E9DA;--cdk:#E8E0CF;--w:#FDFAF5;
+  --fg:#1B1F1A;--fgm:#3D4039;--fgl:rgba(27,31,26,0.45);
+  --g:#1E3B1F;--gm:#2B5430;--gd:#162B17;--gl:#E4EDE4;
+  --au:#B3904F;--aul:#D4B87A;--aup:#F5EDD8;--aupd:#EDE2C8;
+  --br:rgba(27,31,26,0.09);--brm:rgba(27,31,26,0.16);
+  --blk:#0A0A0A;
+  --serif:'Cormorant Garamond',Georgia,serif;
+  --sans:'Jost',system-ui,sans-serif;
+  --ease:cubic-bezier(0.22,1,0.36,1);
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--c);color:var(--fg);font-size:16px;line-height:1.7;overflow-x:hidden}
+.page{display:none}.page.active{display:block}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2.5rem;background:rgba(240,233,218,0.94);backdrop-filter:blur(18px);border-bottom:0.5px solid var(--br)}
+.nav-logo{display:flex;align-items:center;gap:0.9rem;cursor:pointer}
+.nav-crest{width:36px;height:36px;border-radius:50%;background:var(--g);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:0.85rem;color:#fff;font-weight:400;flex-shrink:0}
+.nav-name{font-family:var(--serif);font-size:0.88rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--fg);line-height:1.15;font-weight:500}
+.nav-sub{font-size:0.57rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--au);font-weight:300}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--fgm);font-weight:300;transition:color 0.2s;cursor:pointer;border:none;background:none;font-family:var(--sans)}
+.nav-links a:hover,.nav-links a.active{color:var(--g)}
+.nav-right{display:flex;align-items:center;gap:0.7rem}
+.btn{font-size:0.67rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.65rem 1.4rem;font-weight:400;font-family:var(--sans);cursor:pointer;transition:all 0.2s;text-decoration:none;display:inline-block;border:none}
+.btn-g{background:var(--g);color:#fff}.btn-g:hover{background:var(--gm)}
+.btn-go{background:transparent;color:var(--g);border:0.5px solid var(--g)}.btn-go:hover{background:var(--g);color:#fff}
+.btn-au{background:var(--au);color:#fff}.btn-au:hover{background:var(--aul)}
+.btn-ghost-lt{background:transparent;color:rgba(240,233,218,0.8);border:0.5px solid rgba(240,233,218,0.35)}.btn-ghost-lt:hover{background:rgba(240,233,218,0.1)}
+.btn-cream{background:rgba(240,233,218,0.92);color:var(--g)}.btn-cream:hover{background:#fff}
+.label{font-size:0.59rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--au);font-weight:300;margin-bottom:0.8rem;display:block}
+.label-lt{color:var(--aul)}
+.h1{font-family:var(--serif);font-size:clamp(3.5rem,8.5vw,8rem);font-weight:300;line-height:0.93;letter-spacing:-0.015em;color:var(--fg)}
+.h1 em{font-style:italic;color:var(--g)}
+.h1-lt{color:#fff}.h1-lt em{color:var(--aul)}
+.h2{font-family:var(--serif);font-size:clamp(2rem,3.8vw,3.3rem);font-weight:300;line-height:1.1;color:var(--fg)}
+.h2 em{font-style:italic;color:var(--g)}
+.h2-lt{color:rgba(240,233,218,0.92)}.h2-lt em{color:var(--aul)}
+.body{font-size:0.92rem;color:var(--fgm);line-height:1.9;font-weight:300}
+.body-lt{color:rgba(240,233,218,0.68)}
+.body strong{font-weight:400;color:var(--fg)}
+.body-lt strong{color:rgba(240,233,218,0.92)}
+.body+.body{margin-top:1.2rem}
+.pull{font-family:var(--serif);font-size:clamp(1.1rem,1.8vw,1.5rem);font-style:italic;font-weight:300;line-height:1.52;border-left:2px solid var(--au);padding-left:1.5rem;color:var(--fg)}
+.pull-attr{font-family:var(--sans);font-size:0.59rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--au);font-weight:300;margin-top:0.7rem;font-style:normal;display:block}
+.eyebrow{font-size:0.62rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--au);font-weight:300;margin-bottom:1.2rem}
+.eyebrow-lt{color:var(--aul)}
+.sec{padding:6rem 2.5rem}
+.sec-inner{max-width:1280px;margin:0 auto}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.g3{display:grid;grid-template-columns:repeat(3,1fr)}
+.g4{display:grid;grid-template-columns:repeat(4,1fr)}
+.gap-2px{gap:2px;background:var(--brm)}
+.rule{height:0.5px;background:var(--brm);margin:2rem 0;max-width:60px}
+.bg-c{background:var(--c)}.bg-w{background:var(--w)}.bg-cdk{background:var(--cdk)}
+.bg-g{background:var(--g)}.bg-gd{background:var(--gd)}.bg-fg{background:var(--fg)}.bg-blk{background:var(--blk)}
+.mq-band{overflow:hidden;padding:0.82rem 0}
+.mq-inner{display:flex;width:max-content;animation:mq 40s linear infinite}
+.mq-item{font-size:0.6rem;letter-spacing:0.22em;text-transform:uppercase;padding:0 2.2rem;white-space:nowrap;font-weight:300}
+.mq-g .mq-item{color:rgba(255,255,255,0.48)}.mq-g .hi{color:var(--aul)}
+.mq-au .mq-item{color:rgba(255,255,255,0.82)}.mq-au .dk{color:rgba(27,31,26,0.45)}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 2.5rem 4.5rem;position:relative;overflow:hidden}
+.hero-ghost{position:absolute;right:-3rem;top:50%;transform:translateY(-50%);font-family:var(--serif);font-size:clamp(14rem,28vw,30rem);color:rgba(27,31,26,0.04);line-height:1;pointer-events:none;font-weight:300;letter-spacing:-0.02em;user-select:none}
+.hero-badge{position:absolute;top:6.5rem;right:2.5rem;border:0.5px solid var(--brm);padding:1rem 1.4rem;text-align:center;background:rgba(240,233,218,0.6);backdrop-filter:blur(8px)}
+.hero-badge-lbl{font-size:0.57rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--au);font-weight:300;display:block;margin-bottom:0.3rem}
+.hero-badge-name{font-family:var(--serif);font-size:0.82rem;color:var(--fg);font-weight:400;letter-spacing:0.06em}
+.hero-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;flex-wrap:wrap;margin-top:2.8rem}
+.hero-ctas{display:flex;gap:0.8rem;flex-shrink:0;flex-wrap:wrap}
+.stats{display:flex;gap:4rem;flex-wrap:wrap;padding-top:3rem;border-top:0.5px solid var(--br);margin-top:3rem}
+.stats-lt{border-top-color:rgba(255,255,255,0.1)}
+.stat-n{font-family:var(--serif);font-size:3rem;font-weight:300;color:var(--au);display:block;line-height:1}
+.stat-n-lt{color:var(--aul)}
+.stat-l{font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--fgl);font-weight:300;margin-top:0.4rem;display:block;max-width:22ch;line-height:1.5}
+.stat-l-lt{color:rgba(240,233,218,0.32)}
+.card-pad{padding:2.8rem 2.5rem}
+.prog-tier{font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--au);margin-bottom:0.45rem;font-weight:300}
+.prog-tier-lt{color:var(--aul)}
+.prog-name{font-family:var(--serif);font-size:1.9rem;font-weight:300;color:var(--fg);margin-bottom:0.2rem}
+.prog-name-lt{color:#fff}
+.prog-ages{font-size:0.7rem;color:var(--fgl);margin-bottom:1.8rem;font-weight:300;letter-spacing:0.04em}
+.prog-ages-lt{color:rgba(240,233,218,0.45)}
+.prog-rule{height:0.5px;background:var(--brm);margin-bottom:1.8rem}
+.prog-rule-lt{background:rgba(255,255,255,0.12)}
+.prog-desc{font-size:0.87rem;color:var(--fgm);line-height:1.88;font-weight:300;margin-bottom:2rem}
+.prog-desc-lt{color:rgba(240,233,218,0.65)}
+.sched{list-style:none}
+.sched li{display:flex;justify-content:space-between;align-items:center;padding:0.58rem 0;border-top:0.5px solid var(--br);font-size:0.77rem}
+.sched-lt li{border-top-color:rgba(255,255,255,0.1)}
+.sd{font-size:0.6rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--fgl);font-weight:300}
+.sd-lt{color:rgba(240,233,218,0.38)}
+.st{font-family:var(--serif);font-size:0.9rem;color:var(--fg);font-weight:400}
+.st-lt{color:rgba(240,233,218,0.88)}
+.price-lbl{font-size:0.56rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--au);margin-bottom:0.6rem;font-weight:300}
+.price-lbl-lt{color:var(--aul)}
+.price-name{font-family:var(--serif);font-size:1.45rem;font-weight:300;color:var(--fg);margin-bottom:0.2rem}
+.price-name-lt{color:rgba(240,233,218,0.9)}
+.price-for{font-size:0.7rem;color:var(--fgl);font-weight:300;margin-bottom:1.8rem;letter-spacing:0.04em}
+.price-for-lt{color:rgba(240,233,218,0.38)}
+.price-hr{height:0.5px;background:var(--brm);margin-bottom:1.8rem}
+.price-hr-lt{background:rgba(255,255,255,0.1)}
+.price-num{font-family:var(--serif);font-size:2.5rem;font-weight:300;color:var(--fg);line-height:1;margin-bottom:0.2rem}
+.price-num-lt{color:rgba(240,233,218,0.92)}
+.price-per{font-size:0.65rem;color:var(--fgl);letter-spacing:0.1em;margin-bottom:1.8rem;font-weight:300}
+.price-per-lt{color:rgba(240,233,218,0.4)}
+.feats{list-style:none}
+.feats li{font-size:0.8rem;color:var(--fgm);padding:0.48rem 0;border-top:0.5px solid var(--br);font-weight:300;line-height:1.5;display:flex;gap:0.65rem;align-items:flex-start}
+.feats-lt li{color:rgba(240,233,218,0.62);border-top-color:rgba(255,255,255,0.08)}
+.feats li::before{content:'—';color:var(--au);flex-shrink:0;font-size:0.72rem;margin-top:0.1rem}
+.feats-lt li::before{color:var(--aul)}
+.std-box{border:0.5px solid var(--brm)}
+.std-head{background:var(--g);padding:1.2rem 1.8rem;font-size:0.59rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--aul);font-weight:300}
+.std-item{padding:1.3rem 1.8rem;border-bottom:0.5px solid var(--br)}
+.std-item:last-child{border-bottom:none}
+.std-title{font-family:var(--serif);font-size:0.92rem;font-weight:400;color:var(--fg);margin-bottom:0.3rem}
+.std-body{font-size:0.78rem;color:var(--fgm);line-height:1.72;font-weight:300}
+.form-wrap{display:flex;flex-direction:column;gap:1px;background:rgba(255,255,255,0.08)}
+.form-grp{background:var(--g)}
+.form-grp label{display:block;font-size:0.59rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,233,218,0.4);font-weight:300;padding:1rem 1.2rem 0.2rem}
+.form-grp input,.form-grp select,.form-grp textarea{display:block;width:100%;background:transparent;border:none;outline:none;font-family:var(--sans);font-size:0.88rem;color:rgba(240,233,218,0.88);font-weight:300;padding:0 1.2rem 0.9rem}
+.form-grp textarea{resize:vertical;min-height:90px}
+.form-grp select option{background:var(--g);color:var(--fg)}
+.form-submit{margin-top:1px;padding:1.05rem;background:var(--au);font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;color:#fff;font-weight:400;border:none;cursor:pointer;font-family:var(--sans);transition:background 0.2s;width:100%}
+.form-submit:hover{background:var(--aul)}
+.ci{padding:1.5rem 0;border-bottom:0.5px solid rgba(255,255,255,0.1)}
+.ci:last-child{border-bottom:none}
+.ci-lbl{font-size:0.57rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--aul);font-weight:300;margin-bottom:0.4rem;display:block}
+.ci-val{font-size:0.87rem;color:rgba(240,233,218,0.66);font-weight:300;line-height:1.6}
+.ch-nav{background:var(--fg);overflow-x:auto;position:sticky;top:62px;z-index:200;border-bottom:0.5px solid rgba(255,255,255,0.06)}
+.ch-nav-inner{display:flex;min-width:max-content}
+.ch-link{font-size:0.59rem;letter-spacing:0.13em;text-transform:uppercase;text-decoration:none;padding:1rem 1.5rem;color:rgba(240,233,218,0.35);font-weight:300;border-right:0.5px solid rgba(255,255,255,0.07);white-space:nowrap;transition:color 0.2s;cursor:pointer;background:transparent;border-top:none;border-left:none;border-bottom:1.5px solid transparent;font-family:var(--sans)}
+.ch-link:hover{color:var(--aul)}
+.ch-link.active{color:var(--aul);border-bottom-color:var(--au)}
+.ch{padding:5.5rem 2.5rem;border-bottom:0.5px solid var(--br)}
+.ch-inner{max-width:1200px;margin:0 auto}
+.ch-hd{display:grid;grid-template-columns:1fr 2.2fr;gap:5rem;align-items:start;margin-bottom:4rem}
+.ch-num{font-family:var(--serif);font-size:6rem;font-weight:300;color:rgba(27,31,26,0.06);line-height:1;user-select:none}
+.ch-num-lt{color:rgba(255,255,255,0.04)}
+.ch-sub{font-size:0.59rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--au);margin-bottom:0.7rem;font-weight:300;display:block}
+.ch-sub-lt{color:var(--aul)}
+.ch-title{font-family:var(--serif);font-size:clamp(2rem,3.8vw,3rem);font-weight:300;line-height:1.1;color:var(--fg)}
+.ch-title em{font-style:italic;color:var(--g)}
+.ch-title-lt{color:rgba(240,233,218,0.9)}
+.ch-title-lt em{color:var(--aul)}
+.ch-2col{display:grid;grid-template-columns:1fr 1fr;gap:5rem}
+.ch-col p{font-size:0.92rem;color:var(--fgm);line-height:1.92;font-weight:300;margin-bottom:1.25rem}
+.ch-col-lt p{color:rgba(240,233,218,0.66)}
+.ch-col p strong{color:var(--fg);font-weight:400}
+.ch-col-lt p strong{color:rgba(240,233,218,0.92)}
+.ch-1col p{font-size:0.92rem;color:var(--fgm);line-height:1.92;font-weight:300;margin-bottom:1.25rem}
+.ch-1col-lt p{color:rgba(240,233,218,0.66)}
+.ch-1col p strong{color:var(--fg);font-weight:400}
+.ch-1col-lt p strong{color:rgba(240,233,218,0.92)}
+.ki{padding:2.8rem 3rem;margin:2.5rem 0}
+.ki-lbl{font-size:0.57rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:1.2rem;font-weight:300;display:block}
+.ki-text{font-family:var(--serif);font-size:1.02rem;font-style:italic;font-weight:300;line-height:1.88}
+.ki-src{font-size:0.59rem;letter-spacing:0.12em;text-transform:uppercase;margin-top:1rem;font-weight:300;display:block}
+.ki-gold{background:var(--aup);border:0.5px solid rgba(179,144,79,0.22)}.ki-gold .ki-lbl{color:var(--au)}.ki-gold .ki-text{color:var(--fg)}.ki-gold .ki-src{color:var(--au)}
+.ki-dark{background:rgba(0,0,0,0.18);border:0.5px solid rgba(255,255,255,0.06)}.ki-dark .ki-lbl{color:var(--aul)}.ki-dark .ki-text{color:rgba(240,233,218,0.84)}.ki-dark .ki-src{color:var(--aul)}
+.pcard{padding:2.5rem}
+.pcard-bg-w{background:var(--w)}
+.pcard-kanji{font-family:var(--serif);font-size:3.5rem;color:var(--au);display:block;line-height:1;margin-bottom:0.5rem}
+.pcard-romaji{font-size:0.59rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--fgl);margin-bottom:0.8rem;display:block;font-weight:300}
+.pcard-name{font-family:var(--serif);font-size:1.32rem;font-weight:400;color:var(--fg);margin-bottom:0.8rem}
+.pcard-body{font-size:0.84rem;color:var(--fgm);line-height:1.85;font-weight:300}
+.motto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.08);margin-top:3rem}
+.motto-card{background:rgba(0,0,0,0.16);padding:2rem 1.8rem}
+.motto-kanji{font-family:var(--serif);font-size:1.8rem;color:var(--aul);display:block;margin-bottom:0.5rem;line-height:1}
+.motto-eng{font-family:var(--serif);font-size:0.9rem;font-weight:400;color:rgba(240,233,218,0.82);margin-bottom:0.4rem}
+.motto-body{font-size:0.76rem;color:rgba(240,233,218,0.45);line-height:1.7;font-weight:300}
+.tl{padding-left:2rem;border-left:0.5px solid var(--brm);margin:2.5rem 0}
+.tl-item{margin-bottom:2.2rem;position:relative}
+.tl-item::before{content:'';position:absolute;left:-2.38rem;top:0.38rem;width:8px;height:8px;border-radius:50%;background:var(--au)}
+.tl-yr{font-size:0.59rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--au);font-weight:300;margin-bottom:0.3rem;display:block}
+.tl-ev{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--fg);margin-bottom:0.3rem}
+.tl-det{font-size:0.8rem;color:var(--fgm);line-height:1.7;font-weight:300}
+.stud-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,0.07);margin:3rem 0}
+.stud{background:rgba(0,0,0,0.15);padding:2rem 1.8rem}
+.stud-name{font-family:var(--serif);font-size:1.08rem;font-weight:400;color:rgba(240,233,218,0.9);margin-bottom:0.3rem}
+.stud-role{font-size:0.59rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--aul);margin-bottom:1rem;font-weight:300;line-height:1.5}
+.stud-body{font-size:0.8rem;color:rgba(240,233,218,0.52);line-height:1.8;font-weight:300}
+.leg-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:rgba(255,255,255,0.07);margin-top:3.5rem}
+.leg-stat{background:rgba(0,0,0,0.16);padding:2rem 1.5rem}
+.leg-n{font-family:var(--serif);font-size:2.8rem;font-weight:300;color:var(--aul);display:block;line-height:1;margin-bottom:0.5rem}
+.leg-l{font-size:0.59rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,233,226,0.3);font-weight:300;line-height:1.55}
+.store-hero{background:var(--blk);min-height:58vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 2.5rem 4.5rem;position:relative;overflow:hidden}
+.store-ghost{position:absolute;right:-2rem;top:50%;transform:translateY(-50%);font-family:var(--sans);font-size:clamp(6rem,18vw,16rem);color:rgba(255,255,255,0.03);line-height:1;pointer-events:none;font-weight:500;letter-spacing:-0.04em;user-select:none;white-space:nowrap}
+.store-badge{display:inline-flex;align-items:center;gap:0.8rem;background:rgba(255,255,255,0.06);border:0.5px solid rgba(255,255,255,0.1);padding:0.55rem 1rem;margin-bottom:1.5rem;width:fit-content}
+.store-badge-dot{width:6px;height:6px;border-radius:50%;background:var(--au);flex-shrink:0}
+.store-badge-text{font-size:0.59rem;letter-spacing:0.2em;text-transform:uppercase;color:rgba(255,255,255,0.48);font-weight:300}
+.store-foot{display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;flex-wrap:wrap;margin-top:2.5rem}
+.store-stats{display:flex;gap:2.5rem;flex-shrink:0}
+.ssn{font-family:var(--serif);font-size:2rem;color:#fff;display:block;line-height:1;font-weight:300}
+.ssl{font-size:0.57rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--aul);font-weight:300;margin-top:0.3rem;display:block}
+.partner{background:var(--g);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.ff-box{background:rgba(255,255,255,0.1);border:0.5px solid rgba(255,255,255,0.15);padding:0.7rem 1.2rem;font-family:var(--sans);font-size:0.72rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:#fff;flex-shrink:0}
+.prod-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--brm)}
+.prod-card{background:var(--w);cursor:pointer;transition:background 0.18s}
+.prod-card:hover{background:var(--c)}
+.prod-img{height:290px;background:var(--cdk);position:relative;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:0.5rem}
+.prod-badge{position:absolute;top:1rem;left:1rem;background:var(--g);color:#fff;font-size:0.54rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.28rem 0.7rem;font-weight:400}
+.prod-badge-au{background:var(--au)}
+.prod-kanji-big{font-family:var(--serif);font-size:4.5rem;color:rgba(27,31,26,0.08);line-height:1;display:block;text-align:center}
+.prod-kanji-sub{font-size:0.57rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--fgl);font-weight:300;display:block;text-align:center}
+.prod-body{padding:1.8rem 2rem}
+.prod-tier{font-size:0.54rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--au);margin-bottom:0.38rem;font-weight:300}
+.prod-name{font-family:var(--serif);font-size:1.42rem;font-weight:300;color:var(--fg);margin-bottom:0.2rem}
+.prod-tag{font-size:0.72rem;color:var(--fgl);font-weight:300;margin-bottom:1.1rem;letter-spacing:0.03em}
+.prod-pr{font-family:var(--serif);font-size:1.75rem;font-weight:300;color:var(--fg);margin-bottom:0.2rem}
+.prod-pr-lbl{font-size:0.59rem;letter-spacing:0.1em;color:var(--fgl);font-weight:300;display:block;margin-bottom:1.1rem}
+.prod-feats{list-style:none;margin-bottom:1.4rem}
+.prod-feat{font-size:0.77rem;color:var(--fgm);padding:0.42rem 0;border-top:0.5px solid var(--br);display:flex;gap:0.6rem;font-weight:300;align-items:flex-start}
+.prod-feat::before{content:'✓';color:var(--g);font-size:0.68rem;flex-shrink:0;margin-top:0.08rem;font-weight:500}
+.prod-colors{display:flex;gap:0.5rem;margin-bottom:1.4rem;align-items:center}
+.prod-colors-lbl{font-size:0.59rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--fgl);font-weight:300}
+.cdot{width:20px;height:20px;border-radius:50%;border:0.5px solid var(--brm)}
+.cdot-w{background:#fff}.cdot-b{background:#1a3a7c}
+.prod-btn-out{display:block;text-align:center;padding:0.92rem;font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:400;font-family:var(--sans);transition:all 0.2s;cursor:pointer;border:0.5px solid var(--g);background:transparent;color:var(--g);width:100%}
+.prod-btn-out:hover{background:var(--g);color:#fff}
+.prod-btn-fill{display:block;text-align:center;padding:0.92rem;font-size:0.66rem;letter-spacing:0.14em;text-transform:uppercase;font-weight:400;font-family:var(--sans);transition:all 0.2s;cursor:pointer;background:var(--g);color:#fff;border:none;width:100%}
+.prod-btn-fill:hover{background:var(--gm)}
+.det-panel{display:none;grid-column:1/-1;background:var(--w);border-top:2px solid var(--au);padding:3rem}
+.det-panel.open{display:grid;grid-template-columns:1fr 1.45fr;gap:4rem}
+.det-img{background:var(--cdk);height:400px;display:flex;align-items:center;justify-content:center}
+.det-kanji{font-family:var(--serif);font-size:7rem;color:rgba(27,31,26,0.07);text-align:center}
+.det-tier{font-size:0.57rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--au);margin-bottom:0.5rem;font-weight:300;display:block}
+.det-name{font-family:var(--serif);font-size:2.2rem;font-weight:300;color:var(--fg);margin-bottom:0.5rem}
+.det-tag{font-size:0.87rem;color:var(--fgm);font-weight:300;margin-bottom:2rem;line-height:1.65}
+.det-pr{font-family:var(--serif);font-size:2.6rem;font-weight:300;color:var(--fg);margin-bottom:0.3rem}
+.det-note{font-size:0.65rem;color:var(--fgl);font-weight:300;margin-bottom:2rem;letter-spacing:0.06em}
+.det-opt-lbl{font-size:0.59rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--au);font-weight:300;margin-bottom:0.75rem;display:block}
+.sz-row{display:flex;flex-wrap:wrap;gap:0.38rem;margin-bottom:1.4rem}
+.sz{font-size:0.66rem;letter-spacing:0.08em;padding:0.48rem 0.88rem;border:0.5px solid var(--brm);background:transparent;cursor:pointer;font-family:var(--sans);color:var(--fgm);font-weight:300;transition:all 0.2s}
+.sz:hover,.sz.on{background:var(--fg);color:#fff;border-color:var(--fg)}
+.col-row{display:flex;gap:0.8rem;align-items:center;margin-bottom:2rem}
+.cs{width:30px;height:30px;border-radius:50%;border:2px solid transparent;cursor:pointer;transition:border-color 0.2s}
+.cs.on{border-color:var(--au)}
+.cs-w{background:#fff;box-shadow:0 0 0 0.5px var(--brm)}.cs-b{background:#1a3a7c}
+.det-add{display:block;width:100%;padding:1.1rem;text-align:center;background:var(--g);color:#fff;font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:400;font-family:var(--sans);border:none;cursor:pointer;transition:background 0.2s;margin-bottom:0.8rem}
+.det-add:hover{background:var(--gm)}
+.det-wa{display:block;width:100%;padding:1.1rem;text-align:center;background:transparent;color:var(--g);font-size:0.68rem;letter-spacing:0.16em;text-transform:uppercase;font-weight:400;font-family:var(--sans);border:0.5px solid var(--g);cursor:pointer;transition:all 0.2s;text-decoration:none;margin-bottom:1.5rem}
+.det-wa:hover{background:var(--g);color:#fff}
+.det-tabs{display:flex;gap:0;border-bottom:0.5px solid var(--brm)}
+.det-tab{font-size:0.59rem;letter-spacing:0.12em;text-transform:uppercase;padding:0.7rem 1.1rem;cursor:pointer;color:var(--fgl);font-weight:300;border-bottom:1.5px solid transparent;margin-bottom:-0.5px;transition:all 0.2s;font-family:var(--sans);background:transparent;border-top:none;border-left:none;border-right:none}
+.det-tab.on{color:var(--g);border-bottom-color:var(--au)}
+.det-tc{padding:1.5rem 0;font-size:0.84rem;color:var(--fgm);line-height:1.85;font-weight:300}
+.det-tc.hidden{display:none}
+.spec-r{display:flex;justify-content:space-between;padding:0.52rem 0;border-bottom:0.5px solid var(--br);font-size:0.8rem}
+.spec-r:last-child{border-bottom:none}
+.spec-k{color:var(--fgl);font-weight:300;font-size:0.72rem;letter-spacing:0.06em}
+.spec-v{color:var(--fg);font-weight:300}
+.sz-guide{padding:6rem 2.5rem}
+.sz-guide-inner{max-width:1200px;margin:0 auto}
+.sz-rule-box{background:rgba(0,0,0,0.18);border:0.5px solid rgba(255,255,255,0.07);padding:2.5rem;margin-bottom:2rem}
+.sz-rule-title{font-family:var(--serif);font-size:1.08rem;font-weight:400;color:rgba(240,233,218,0.85);margin-bottom:0.8rem}
+.sz-rule-body{font-size:0.84rem;color:rgba(240,233,218,0.52);line-height:1.82;font-weight:300}
+.sz-rule-body strong{color:rgba(240,233,218,0.85);font-weight:400}
+.sz-col-lbl{font-size:0.59rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--aul);font-weight:300;margin-bottom:1.1rem;display:block}
+.sz-table{width:100%;border-collapse:collapse;font-size:0.78rem}
+.sz-table th{font-size:0.58rem;letter-spacing:0.14em;text-transform:uppercase;color:rgba(240,233,218,0.32);font-weight:300;padding:0.6rem 0.8rem;text-align:left;border-bottom:0.5px solid rgba(255,255,255,0.07)}
+.sz-table td{padding:0.62rem 0.8rem;color:rgba(240,233,218,0.58);border-bottom:0.5px solid rgba(255,255,255,0.04);font-weight:300}
+.sz-table tr:last-child td{border-bottom:none}
+.sz-table tr:hover td{background:rgba(255,255,255,0.03)}
+.sz-n{font-family:var(--serif);font-size:0.95rem;color:rgba(240,233,218,0.88);font-weight:400}
+.sz-rec{color:var(--aul);font-size:0.73rem}
+.fit-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5px;background:rgba(255,255,255,0.06);margin-top:2.5rem}
+.fit-card{background:rgba(0,0,0,0.15);padding:1.8rem}
+.fit-card-lbl{font-size:0.57rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--aul);margin-bottom:0.5rem;font-weight:300;display:block}
+.fit-card-name{font-family:var(--serif);font-size:1.05rem;font-weight:400;color:rgba(240,233,218,0.85);margin-bottom:0.5rem}
+.fit-card-body{font-size:0.76rem;color:rgba(240,233,218,0.46);line-height:1.72;font-weight:300}
+.skirt-title{font-family:var(--serif);font-size:1rem;font-weight:400;color:rgba(240,233,218,0.82);margin:2rem 0 0.8rem}
+.skirt-row{display:flex;gap:2rem;padding:0.62rem 0;border-bottom:0.5px solid rgba(255,255,255,0.06);flex-wrap:wrap}
+.skirt-len{font-family:var(--serif);font-size:1rem;font-weight:300;color:var(--aul);min-width:50px}
+.skirt-cats{font-size:0.76rem;color:rgba(240,233,218,0.48);font-weight:300;line-height:1.6}
+.care-card{background:var(--w);padding:2rem 1.8rem}
+.care-icon{font-size:1.4rem;margin-bottom:1rem;display:block}
+.care-title{font-family:var(--serif);font-size:1rem;font-weight:400;color:var(--fg);margin-bottom:0.5rem}
+.care-body{font-size:0.78rem;color:var(--fgm);line-height:1.78;font-weight:300}
+footer{background:var(--fg);padding:5rem 2.5rem 3rem;border-top:0.5px solid rgba(255,255,255,0.06)}
+.ft-inner{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;max-width:1280px;margin:0 auto 4rem}
+.ft-bn{font-family:var(--serif);font-size:0.92rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(240,233,218,0.88);font-weight:400;margin-bottom:0.25rem}
+.ft-bs{font-size:0.57rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--aul);margin-bottom:1.5rem;font-weight:300}
+.ft-tag{font-family:var(--serif);font-size:0.88rem;font-style:italic;color:rgba(240,233,218,0.28);line-height:1.65;max-width:26ch;font-weight:300}
+.ft-cl{font-size:0.57rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--aul);margin-bottom:1rem;font-weight:300}
+.ft-col ul{list-style:none}
+.ft-col ul li{margin-bottom:0.52rem}
+.ft-col ul li a{font-size:0.78rem;color:rgba(240,233,218,0.36);text-decoration:none;font-weight:300;transition:color 0.2s;cursor:pointer;background:none;border:none;font-family:var(--sans);padding:0}
+.ft-col ul li a:hover{color:var(--aul)}
+.ft-bot{border-top:0.5px solid rgba(240,233,218,0.07);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;max-width:1280px;margin:0 auto}
+.ft-copy{font-size:0.63rem;color:rgba(240,233,218,0.17);font-weight:300;letter-spacing:0.05em}
+.ft-kanji{font-family:var(--serif);font-size:1.4rem;color:rgba(179,144,79,0.2);letter-spacing:0.2em}
+.fi{opacity:0;transform:translateY(18px);transition:opacity 0.75s var(--ease),transform 0.75s var(--ease)}
+.fi.on{opacity:1;transform:none}
+.fi-d1{transition-delay:0.1s}.fi-d2{transition-delay:0.2s}.fi-d3{transition-delay:0.3s}
+@media(max-width:1024px){
+  .g2,.ch-hd,.ch-2col{grid-template-columns:1fr;gap:3rem}
+  .g3,.g4,.prod-grid,.stud-grid,.leg-grid,.motto-grid{grid-template-columns:1fr}
+  .det-panel.open{grid-template-columns:1fr}
+  .ft-inner{grid-template-columns:1fr 1fr;gap:2rem}
+  .nav-links{display:none}
+  .sec{padding:4rem 1.5rem}.ch{padding:4rem 1.5rem}
+  .store-stats{display:none}
+  .fit-grid{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  nav{padding:0.9rem 1.2rem}
+  .nav-right .btn-go{display:none}
+  .hero{padding:0 1.2rem 3.5rem}
+  .hero-badge{display:none}
+  .ft-inner{grid-template-columns:1fr}
+  .store-hero{padding:0 1.2rem 3.5rem}
+  .hero-ctas{flex-direction:column;width:100%}
+  .hero-ctas .btn{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo" onclick="goPage('home')">
+    <div class="nav-crest">柔</div>
+    <div>
+      <div class="nav-name">Kota Permai Judo Club</div>
+      <div class="nav-sub">Kota Permai Golf and Country Club</div>
+    </div>
+  </div>
+  <ul class="nav-links">
+    <li><a onclick="goPage('home')" id="nl-home" class="active">Home</a></li>
+    <li><a onclick="goPage('phil')" id="nl-phil">Philosophy</a></li>
+    <li><a onclick="goPage('prog')" id="nl-prog">Programme</a></li>
+    <li><a onclick="goPage('judogi')" id="nl-judogi">Judogi</a></li>
+    <li><a onclick="goPage('contact')" id="nl-contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="btn btn-go" onclick="goPage('prog')">View Classes</button>
+    <button class="btn btn-g" onclick="goPage('contact')">Enquire Now</button>
+  </div>
+</nav>
+
+<!-- ════════════════════════════════ HOME ════════════════════════════════ -->
+<div class="page active" id="page-home">
+
+<section class="hero bg-c">
+  <div class="hero-ghost">柔道</div>
+  <div class="hero-badge">
+    <span class="hero-badge-lbl">Located at</span>
+    <span class="hero-badge-name">Kota Permai<br>Golf and Country Club</span>
+  </div>
+  <div class="eyebrow">Kota Kemuning, Shah Alam · Est. 2025 · Founding Membership Open</div>
+  <h1 class="h1" style="max-width:16ch;margin-bottom:0">Where Discipline<br>Begins <em>Early.</em></h1>
+  <div class="hero-foot">
+    <p class="body" style="max-width:44ch">Greater Kuala Lumpur's premier judo members club. For the families who already know what most parents are still trying to figure out, that the formation of a child's body and his character are not separate undertakings, and that both of them begin far earlier than anyone ever tells you.</p>
+    <div class="hero-ctas">
+      <button class="btn btn-g" onclick="goPage('contact')">Book a Trial</button>
+      <button class="btn btn-go" onclick="goPage('prog')">View Programme</button>
+    </div>
+  </div>
+</section>
+
+<div class="mq-band bg-g mq-g">
+  <div class="mq-inner">
+    <span class="mq-item hi">One Mat. One Standard.</span><span class="mq-item">Kota Permai Judo Club</span><span class="mq-item hi">精力善用 Maximum Efficiency</span><span class="mq-item">自他共栄 Mutual Welfare</span><span class="mq-item hi">Juniors · Kids · Adults</span><span class="mq-item">Kota Kemuning · Shah Alam</span><span class="mq-item hi">Founded on the Teachings of Jigoro Kano, 1882</span><span class="mq-item">Founding Members 2025</span><span class="mq-item hi">One Mat. One Standard.</span><span class="mq-item">Kota Permai Judo Club</span><span class="mq-item hi">精力善用 Maximum Efficiency</span><span class="mq-item">自他共栄 Mutual Welfare</span><span class="mq-item hi">Juniors · Kids · Adults</span><span class="mq-item">Kota Kemuning · Shah Alam</span><span class="mq-item hi">Founded on the Teachings of Jigoro Kano, 1882</span><span class="mq-item">Founding Members 2025</span>
+  </div>
+</div>
+
+<section class="sec bg-w" style="border-top:0.5px solid var(--br);border-bottom:0.5px solid var(--br)">
+  <div class="sec-inner">
+    <div class="g2">
+      <div class="fi">
+        <span class="label">About the Club</span>
+        <h2 class="h2">Not a gym.<br><em>A members club.</em></h2>
+        <blockquote class="pull" style="margin-top:2.5rem">
+          "Nothing under heaven is more important than education. The teaching of one virtuous person can influence many. That which has been learned well by one generation will pass on to a hundred."
+          <span class="pull-attr">Jigoro Kano · Calligraphic motto · The Kodokan, Tokyo</span>
+        </blockquote>
+      </div>
+      <div class="fi fi-d1" style="padding-top:4rem">
+        <p class="body">Kota Permai Golf and Country Club has for decades been the address in Kota Kemuning where people of standing meet not as counterparties but as members of the same place, held together not by proximity but by the quiet agreement of shared practice on shared ground. The Golf and Country Club built that culture around the fairways. The Judo Club extends it to the mat.</p>
+        <p class="body">We are not the largest judo club in Greater Kuala Lumpur and we have no intention of being. We are building a founding membership of thirty committed adults and a children's programme that the families of Kota Kemuning and Bukit Jelutong and Glenmarie will, ten years from now, quietly and honestly describe as among the most consequential decisions they ever made for their children. Not the most expensive. The most consequential.</p>
+        <div class="rule" style="margin-top:2rem"></div>
+        <p class="body" style="font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--au);font-weight:300">No. 1, Jalan 31/100A · Kota Kemuning, Section 31 · 40460 Shah Alam · Selangor</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-g">
+  <div class="sec-inner">
+    <span class="label label-lt">Why Judo</span>
+    <h2 class="h2 h2-lt" style="max-width:26ch;margin-bottom:4rem">The oldest form of<br><em>complete education.</em></h2>
+    <div class="g2">
+      <div class="fi">
+        <p class="body body-lt">In 1877 a seventeen year old university student named Jigoro Kano enrolled in his first jujutsu class. He covered his bruised body after every session with a foul smelling homemade salve and earned among his classmates the permanent name Kano the Odiferous. And he could not beat a training partner named Kanekichi Fukushima. Fukushima was large and powerful and needed no particular technique because his size was technique enough. He simply needed to be himself and that was sufficient.</p>
+        <p class="body body-lt">And Kano did not respond to this by training harder in the conventional sense. He had craftsmen build wooden dolls he could bend into postures, working out the geometry of how a small body might move a large one. He went to the National Library and studied anatomy manuals. He read European wrestling manuals alongside ancient Japanese scrolls. What he was looking for was the governing law beneath the technique, the principle that, once understood, renders the question of size irrelevant. <strong>He found it. And then he built a system around it that is still standing.</strong></p>
+        <p class="body body-lt">What Kano founded in 1882 was not a sport. He was uncomfortable with that word his entire life. He was an educator who became the Father of Physical Education in Japan and judo was the vehicle by which the body and the character were educated simultaneously, because he believed and proved with decades of evidence that they cannot in fact be educated separately.</p>
+      </div>
+      <div class="fi fi-d1">
+        <p class="body body-lt">There is a woman named Noriko Yasuda who came to Kano's dojo in 1884. She was weak and sickly, mentally as well as physically. Kano had her eat well and do light exercises and then gradually enter the mat. And a year into the training she accompanied Kano and a mixed group on a climb to the summit of Mount Fuji. <strong>She reached the top first.</strong></p>
+        <p class="body body-lt">There is a man named Kyuzo Mifune who stood barely five feet tall and was grateful to his parents for giving him a small body because it forced him to train twice as hard as everyone else. His motto: "If my opponents train one hour I will train two. If they train two I will train three." He was never defeated in formal competition. He was still teaching on the mat at seventy three.</p>
+        <p class="body body-lt">There is a woman named Katsuko Kosaki who found a book about judo in a bookstore at eighteen, read it cover to cover, and decided then and there that judo was for her. She trained in secret from her parents. She defeated three male opponents in a row at the rank examination. In 1933 she became the first woman black belt in the history of the Kodokan. She opened her own dojo two years after that.</p>
+        <p class="body body-lt">These are not exceptional people who happened to find judo. <strong>These are ordinary people who were made extraordinary by it.</strong> That is the proposition. And the evidence for it is a hundred and forty three years old and still accumulating.</p>
+      </div>
+    </div>
+    <div class="stats stats-lt">
+      <div><span class="stat-n stat-n-lt">1882</span><span class="stat-l stat-l-lt">Year the Kodokan was founded · twelve mats, nine students, one twenty two year old educator with a purpose</span></div>
+      <div><span class="stat-n stat-n-lt">143</span><span class="stat-l stat-l-lt">Countries in which judo is practiced today · the most widely distributed martial art on earth</span></div>
+      <div><span class="stat-n stat-n-lt">30</span><span class="stat-l stat-l-lt">Founding adult members we are building toward · the threshold at which a club develops a genuine culture</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-c" style="border-top:0.5px solid var(--br)">
+  <div class="sec-inner">
+    <span class="label">Programme</span>
+    <h2 class="h2" style="margin-bottom:3.5rem">Built for every<br><em>stage of the journey.</em></h2>
+    <div class="g3 gap-2px">
+      <div class="card-pad bg-c fi">
+        <div class="prog-tier">Tier I · Juniors</div>
+        <div class="prog-name">Little Champions</div>
+        <div class="prog-ages">Ages 4 to 6 years</div>
+        <div class="prog-rule"></div>
+        <p class="prog-desc">The youngest members learn one thing above all others. How to move without fear. Not confidence as a feeling, which the world can give and take away, but confidence as a physical fact deposited into the body by years of practice and never fully withdrawn.</p>
+        <ul class="sched">
+          <li><span class="sd">Saturday</span><span class="st">10:00 to 12:00</span></li>
+          <li><span class="sd">Sunday</span><span class="st">10:00 to 12:00</span></li>
+          <li><span class="sd">Frequency</span><span class="st">Twice weekly</span></li>
+        </ul>
+      </div>
+      <div class="card-pad bg-g fi fi-d1">
+        <div class="prog-tier prog-tier-lt">Tier III · Flagship</div>
+        <div class="prog-name prog-name-lt">Adults</div>
+        <div class="prog-ages prog-ages-lt">All experience levels welcome</div>
+        <div class="prog-rule prog-rule-lt"></div>
+        <p class="prog-desc prog-desc-lt">Three sessions per week for the founding membership of thirty. In a well run judo session the most experienced member in the room learns from the least, because the mat's feedback is immediate and it does not flatter and it does not lie. This is where a senior professional and a younger member find themselves on equal footing in a grip contest that no boardroom prepares either of them for.</p>
+        <ul class="sched sched-lt">
+          <li><span class="sd sd-lt">Thursday</span><span class="st st-lt">7:00 to 9:00 pm</span></li>
+          <li><span class="sd sd-lt">Friday</span><span class="st st-lt">7:00 to 9:00 pm</span></li>
+          <li><span class="sd sd-lt">Saturday</span><span class="st st-lt">5:00 to 7:00 pm</span></li>
+        </ul>
+      </div>
+      <div class="card-pad bg-c fi fi-d2">
+        <div class="prog-tier">Tier II · Kids</div>
+        <div class="prog-name">Rising Judoka</div>
+        <div class="prog-ages">Ages 7 and above</div>
+        <div class="prog-rule"></div>
+        <p class="prog-desc">Structured technique, belt progression, and the social discipline of training with a partner who is trying as hard as you are. Children here learn to lose well and to try again and to respect an opponent without diminishing themselves. A curriculum that no classroom delivers as reliably as the mat does.</p>
+        <ul class="sched">
+          <li><span class="sd">Weekend</span><span class="st">Twice weekly</span></li>
+          <li><span class="sd">Pathway</span><span class="st">White to Black Belt</span></li>
+          <li><span class="sd">Coming 2026</span><span class="st">Weekday after school</span></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <button class="btn btn-g" onclick="goPage('prog')">Full Programme Details</button>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- ════════════════════════════════ PHILOSOPHY ════════════════════════════════ -->
+<div class="page" id="page-phil">
+
+<section class="bg-gd" style="min-height:72vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 2.5rem 5rem;position:relative;overflow:hidden">
+  <div style="position:absolute;right:-3rem;top:50%;transform:translateY(-55%);font-family:var(--serif);font-size:clamp(16rem,30vw,32rem);color:rgba(255,255,255,0.04);line-height:1;pointer-events:none;font-weight:300;user-select:none">道</div>
+  <div class="eyebrow eyebrow-lt">Kota Permai Judo Club · The Way of Judo · A Cosmology</div>
+  <h1 class="h1 h1-lt" style="max-width:18ch">The Cosmology<br>of <em>Judo.</em></h1>
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:4rem;flex-wrap:wrap;margin-top:2.5rem">
+    <p class="body body-lt" style="max-width:46ch">The principles that Jigoro Kano built into the Kodokan in 1882 were not techniques. They were a way of understanding the world and the person one becomes by submitting to its discipline honestly and for long enough that the body forgets to resist.</p>
+    <span style="font-family:var(--serif);font-size:5rem;color:rgba(211,184,122,0.18);font-weight:300;letter-spacing:0.3em;flex-shrink:0">柔 道</span>
+  </div>
+</section>
+
+<div class="ch-nav">
+  <div class="ch-nav-inner">
+    <button class="ch-link active" onclick="scrollCh('ch1',this)">I · The Origin</button>
+    <button class="ch-link" onclick="scrollCh('ch2',this)">II · The Founding</button>
+    <button class="ch-link" onclick="scrollCh('ch3',this)">III · The Breakthrough</button>
+    <button class="ch-link" onclick="scrollCh('ch4',this)">IV · The Two Principles</button>
+    <button class="ch-link" onclick="scrollCh('ch5',this)">V · Ki and Timing</button>
+    <button class="ch-link" onclick="scrollCh('ch6',this)">VI · The Students</button>
+    <button class="ch-link" onclick="scrollCh('ch7',this)">VII · What Survives a Great Teacher</button>
+  </div>
+</div>
+
+<!-- CH I -->
+<div class="ch bg-w" id="ch1">
+  <div class="ch-inner">
+    <div class="ch-hd fi">
+      <div class="ch-num">I</div>
+      <div>
+        <span class="ch-sub">The Origin · Tokyo, 1877</span>
+        <h2 class="ch-title">The Boy Who Could Not<br>Simply <em>Fight.</em></h2>
+      </div>
+    </div>
+    <div class="ch-2col">
+      <div class="ch-col fi">
+        <p>In 1877 a seventeen year old university student named Jigoro Kano enrolled in his first jujutsu class at the clinic and dojo of Hachinosuke Fukuda. He was small. He covered his bruised body every evening with a foul smelling homemade salve and earned among his classmates the permanent name Kano the Odiferous. And there was a training partner named Kanekichi Fukushima who defeated him every single time they trained together, not through technique but through size, and that was all he needed.</p>
+        <p>Another man at this impasse would have simply trained harder. Kano did something different entirely. He asked a sumo wrestler for advice and found sumo unhelpful. He had a craftsman build wooden dolls he could bend into different shapes, working out by hand and by eye the geometry of how a small body might move a large one. He went to the National Library in Ueno and studied anatomy manuals. He read European wrestling manuals, including what was likely a Dutch manual from the seventeenth century, alongside ancient Japanese ryu scrolls. From all of that he devised a throw called kata guruma, the shoulder wheel throw, and the first time he tried it on Fukushima it worked. Not because he had found a trick. Because he had found a principle.</p>
+      </div>
+      <div class="ch-col fi fi-d1">
+        <p>The principle was this. A smaller body could defeat a larger one not by matching its force but by understanding where that force goes and where it does not, by yielding at the exact moment resistance would cost the most, and by redirecting what the larger body gives into the very throw the larger body has, without ever realizing it, already begun. Kano did not invent this idea. It had been present in the jujutsu schools of Japan for centuries. What he had done was arrive at it independently and rationally and empirically, not through transmission from a master and not through mystical experience but through the systematic investigation of anatomy and leverage and the actual mechanics of two human bodies in motion.</p>
+        <p>This is the founding temperament of Kodokan judo. Not the warrior tradition of inherited schools and not the mysticism of energy cultivation but the rational and relentless investigation of how the body actually works, conducted by a man who would not accept "because that is how it has always been done" as an answer to any question about anything. This temperament produced a system that is still being practiced in a hundred and forty three countries. It began with a seventeen year old and some wooden dolls.</p>
+        <blockquote class="pull" style="margin-top:2rem">
+          "From Master Fukuda, I learned what my life's work would be. From Master Masamoto, I learned the subtle nature of kata. From Master Iikubo, I learned varied techniques and the importance of timing."
+          <span class="pull-attr">Jigoro Kano · In his memoirs · On his three teachers before the founding</span>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CH II -->
+<div class="ch bg-c" id="ch2">
+  <div class="ch-inner">
+    <div class="ch-hd fi">
+      <div class="ch-num">II</div>
+      <div>
+        <span class="ch-sub">The Founding · Eisho ji Temple, Tokyo · June 5th 1882</span>
+        <h2 class="ch-title">A Twelve Mat Room<br>at a <em>Buddhist Temple.</em></h2>
+      </div>
+    </div>
+    <div class="ch-2col">
+      <div class="ch-col fi">
+        <p>On the fifth of June in 1882 Jigoro Kano was twenty two years old. He had rented rooms at Eisho ji, a small Jodo sect Buddhist temple in Tokyo. The largest room was twelve mats in size and it doubled as a dojo. There were no set practice times. If someone showed up to train in the morning or during the day or late at night then the furniture was moved aside and whoever was there trained together. Only nine students formally registered in 1884. Eight the year after. Ten the year after that. Twenty seven fully committed students in the first three years of the Kodokan's existence. The training was so severe it began to damage the temple itself. Floorboards shattered. Memorial tablets tumbled from the altar. Roof tiles were knocked loose. The head priest eventually demanded Kano move the dojo, and so a small makeshift twelve mat space was built by one of the temple gates. Kano hung a sign on the building. Kodokan. Institute for Study of the Way.</p>
+        <blockquote class="pull" style="margin-top:2rem">
+          "Kano Sensei trained just as hard if not harder than we did. It was judo, judo, judo. We drank mugi tea with a bit of sugar and ate rice seasoned only with lotus roots from the temple pond. Mostly I remember being sleepy and hungry but I never once thought of running away."
+          <span class="pull-attr">Tsunejiro Tomita · The Kodokan's first student · In his journal</span>
+        </blockquote>
+      </div>
+      <div class="ch-col fi fi-d1">
+        <p>What distinguishes this founding from every other martial arts school established in Japan that century is not its size, which was negligible, but the absolute clarity of its purpose. Kano was not preserving a school. He was building a system. He compared jujutsu to Hinayana Buddhism, a small vehicle with a limited vision. Kodokan judo would be the Mahayana. A big vehicle that embraced both the individual and society as a whole. "If the work of a human being does not benefit society," he declared at the founding, "that person's existence is in vain." This is not a martial arts principle. It is a civilizational one.</p>
+        <p>And then Kano left behind a calligraphic motto he returned to again and again throughout his life, brushing it at lectures and at ceremonies and on pieces of paper given away to students who asked: Suiteki Sekisen. <strong>Drops of water wear down a stone.</strong> Not force. Persistence. The patient application of small and consistent effort over a timescale that most people do not have the courage to commit to. And then another motto, this one for the parents in the room: Shosofudoryoku. <strong>No effort in youth, no gain when old.</strong> Not as an admonishment. As a description of how the body actually works.</p>
+        <div class="tl" style="margin-top:2.5rem">
+          <div class="tl-item"><span class="tl-yr">1882</span><div class="tl-ev">Kodokan Judo formally established</div><div class="tl-det">Twelve mats at Eisho ji Temple. Nine founding students. One twenty two year old educator who believed education was the whole point.</div></div>
+          <div class="tl-item"><span class="tl-yr">1884</span><div class="tl-ev">First ranking system introduced</div><div class="tl-det">Three kyu grades and three dan grades. Tomita and Saigo receive the first dan grades in the school's history.</div></div>
+          <div class="tl-item"><span class="tl-yr">1886</span><div class="tl-ev">The decisive tournament</div><div class="tl-det">Kodokan judoka defeat the Totsuka Ha Yoshin ryu in the open contest that establishes judo's supremacy in Tokyo.</div></div>
+          <div class="tl-item"><span class="tl-yr">1909</span><div class="tl-ev">First Asian member of the International Olympic Committee</div><div class="tl-det">Kano campaigns for judo's Olympic inclusion until his death. It enters the Games in 1964 in Tokyo, twenty six years after he dies.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CH III -->
+<div class="ch bg-gd" id="ch3" style="border-bottom-color:rgba(255,255,255,0.07)">
+  <div class="ch-inner">
+    <div class="ch-hd fi">
+      <div class="ch-num ch-num-lt">III</div>
+      <div>
+        <span class="ch-sub ch-sub-lt">The Breakthrough · 1883</span>
+        <h2 class="ch-title ch-title-lt">If My Partner Pulls,<br><em>I Push.</em></h2>
+      </div>
+    </div>
+    <div class="ch-2col">
+      <div class="ch-col ch-col-lt fi">
+        <p>Kano's teacher Iikubo continued to visit the dojo after the founding, sauntering in samurai style and carrying a heavy iron fan in his sash in case ruffians attacked him on the way. He dominated Kano as usual. And then one day in 1883 something shifted. Kano grasped in the fullness of his body rather than only in his mind what he had known as theory for years. If my partner pulls, I push. If he pushes, I pull. He threw Iikubo three times in succession. Iikubo bestowed a formal teaching license on Kano that autumn and gave him the transmission scrolls of the school.</p>
+        <p>And Kano was careful, in describing this moment to his students later, to attribute it not to mystical experience as martial artists so often do but to years of careful investigation and a rational approach to the art and tireless experimentation with his own trainees. The breakthrough was not sudden. It was the arrival of an understanding that had been accumulating since the wooden dolls and the anatomy manuals six years before. It felt sudden only because it revealed itself all at once. <strong>This is also how all genuine learning works. The body deposits experience in increments too small to feel and then one day you throw your teacher three times in a row.</strong></p>
+        <p>There is a small story Kano told later in life about a mongoose he watched in Okinawa in 1927, in one of those exhibitions they staged for tourists where a mongoose and a poisonous adder are made to fight. He said the mongoose killed the adder because it practiced judo. It dodged the adder's strikes and immediately counterattacked with perfect timing. He was not joking. He was entirely serious and entirely right.</p>
+      </div>
+      <div class="ch-col ch-col-lt fi fi-d1">
+        <p>This is the cosmological core of judo. Not the specific technique but the governing principle the technique expresses. Force meeting force is the least efficient possible use of energy. The body that yields at the right moment and redirects what is given to it is doing something more intelligent, not less effective, than the body that simply resists. And this principle does not apply only to judo. This is what Kano understood and what distinguishes him from every other martial arts systematizer of his era. He was not describing how to throw people. <strong>He was describing how to move through a world that is always pushing and pulling, always presenting force that can either be resisted at great cost or redirected at very little.</strong></p>
+        <p>He called this understanding judo. He meant it to be practiced on the mat first and in every other domain of life immediately after. The child who trains ukemi on a Saturday morning in Kota Kemuning is not just learning a judo technique. She is depositing experience into the body's memory and the body's memory is the most durable kind there is. Years later in a context that has nothing to do with judo something in that deposited experience will surface and the people around her will notice it and will not be able to name what it is.</p>
+        <div class="ki ki-dark" style="margin-top:2rem">
+          <span class="ki-lbl">Jigoro Kano · Asked how a judo man would handle himself against a bear</span>
+          <p class="ki-text">"Bears are ferocious when cornered but they will shy away from loud noises or bright lights. The best kind of judo is to keep the bear at bay with proper precautions rather than attempt to confront it face to face."</p>
+          <span class="ki-src">This is also, it is worth noting, excellent life advice.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CH IV -->
+<div class="ch bg-w" id="ch4">
+  <div class="ch-inner">
+    <div class="ch-hd fi">
+      <div class="ch-num">IV</div>
+      <div>
+        <span class="ch-sub">The Two Principles · 精力善用 · 自他共栄</span>
+        <h2 class="ch-title">The Philosophy<br>Made <em>Explicit.</em></h2>
+      </div>
+    </div>
+    <div class="ch-1col fi" style="margin-bottom:3rem">
+      <p>Kano eventually codified the governing philosophy of Kodokan judo in two principles. They are not techniques and they are not rules. They are a description of how the world works when a person pays close enough attention to it and what becomes available to a person who has internalized them so deeply that they act on them without deliberation. They are what a good education produces. And judo is in Kano's conception precisely that, a good education applied to the body first so that the mind and the character follow in their own time and in their own way.</p>
+    </div>
+    <div class="g2 gap-2px fi" style="background:var(--brm)">
+      <div class="pcard pcard-bg-w">
+        <span class="pcard-kanji">精力善用</span>
+        <span class="pcard-romaji">Seiryoku Zenyo</span>
+        <div class="pcard-name">Maximum Efficiency, Minimum Effort</div>
+        <p class="pcard-body">All available energy, physical and mental and moral alike, should be applied with maximum efficiency toward whatever end is being pursued. Waste nothing. Resist nothing that need not be resisted. Apply force precisely where it is needed at the precise moment it is needed and not a moment before or after. This is the first lesson of the mat and it becomes, through years of practice, the founding habit of every domain the trained person enters afterward. A child who has spent years learning this through the body has learned it in the most durable way that exists.</p>
+      </div>
+      <div class="pcard pcard-bg-w">
+        <span class="pcard-kanji">自他共栄</span>
+        <span class="pcard-romaji">Jita Kyoei</span>
+        <div class="pcard-name">Mutual Welfare and Benefit</div>
+        <p class="pcard-body">No individual improvement is complete unless it contributes to the improvement of others. The opponent on the mat is not an obstacle. The opponent is the teacher. You cannot improve without a partner and your partner cannot improve without you. Kano believed that this principle, absorbed on the mat and carried off it, is the foundation of good citizenship and of a good society. Judo is not a preparation for life. It is a practice of life, with the volume turned up high enough that you cannot miss the lesson even if you are not looking for it.</p>
+      </div>
+    </div>
+    <div class="ch-1col fi" style="margin-top:2.5rem">
+      <p>Kyuzo Mifune, the greatest technical judoka of the generation after Kano and a man who was never defeated in formal competition, composed five principal points of judo practice that describe these two principles in the language of someone who had lived on the mat for decades. And the last of his five points is this: <strong>do not place hope in finding a secret technique. Polish the mind through ceaseless training. That is the key to effective technique.</strong> Kano had been saying the same thing since 1882 in the language of a scholar and an educator and here is Mifune saying it in the language of a man who has thrown everyone he has ever met. The message is identical. The mat and the library are the same room.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CH V -->
+<div class="ch bg-cdk" id="ch5">
+  <div class="ch-inner">
+    <div class="ch-hd fi">
+      <div class="ch-num">V</div>
+      <div>
+        <span class="ch-sub">Ki and Timing · The Kito Ryu Transmission · 1883</span>
+        <h2 class="ch-title">The Intelligence<br>of <em>Yielding.</em></h2>
+      </div>
+    </div>
+    <div class="ch-2col">
+      <div class="ch-col fi">
+        <p>The third of Kano's teachers, Tsunetoshi Iikubo of the Kito ryu, trained him in a system philosophically distinct from the earlier schools. Where the Tenjin Shin'yo ryu was practical and technique heavy, the Kito ryu was philosophical and timing centred. Its foundational texts, the Kito ryu Densho Chusaku, describe the relationship between ki and yin and yang and perfect timing in language that Kano absorbed and later rationalized into seiryoku zenyo and the modern science of leverage and center of gravity.</p>
+        <p>These are not two different things that Kano was navigating between. The ancient philosophical language of ki and the modern rational language of efficiency are, for anyone who has genuinely practiced judo long enough, two descriptions of the same phenomenon. The moment when a throw works perfectly does not feel like mechanics. It feels like something else entirely. And both descriptions are true at the same time because <strong>the body knows things that the vocabulary of either age struggles to fully capture.</strong></p>
+        <p>Kano received this text in the same year he threw Iikubo for the first time. He did not need to choose between the mystical language and the rational language. He absorbed the principle and expressed it in the language his era could use and trusted that anyone who practiced long enough would eventually know what both descriptions were pointing toward.</p>
+      </div>
+      <div class="ch-col fi fi-d1">
+        <div class="ki ki-gold">
+          <span class="ki-lbl">From the Kito Ryu Densho Chusaku · 17th Century · Transmitted to Jigoro Kano by Tsunetoshi Iikubo, 1883</span>
+          <p class="ki-text">"Ki fulfills the body. When ki arises it is called yang; when it is suppressed it is called yin. If the body is not set aright ki cannot be brought forth. The secret teaching of our system is this: continually polish your ki, do not be captivated by worldly objects, and keep firmly to the fundamentals. When the opponent attacks with yin use yang to win. When the opponent attacks with yang use yin to emerge victorious. If you abandon force and utilize ki the opponent will defeat himself. This is the key to total victory. If your heart is correct your technique will be correct."</p>
+          <span class="ki-src">Kito Ryu Densho Chusaku</span>
+        </div>
+        <p class="body" style="margin-top:1.5rem;font-size:0.88rem">A parent reading this passage may feel, if they are honest, that it does not sound like a description of sport. It does not. It sounds like a description of how to raise a child. Do not be captivated by worldly objects. Keep firmly to the fundamentals. If your heart is correct your technique will be correct. <strong>Kano thought so too. The mat and the moral life were for him the same classroom and he never tired of saying so.</strong></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CH VI -->
+<div class="ch bg-fg" id="ch6" style="border-bottom-color:rgba(255,255,255,0.06)">
+  <div class="ch-inner">
+    <div class="ch-hd fi">
+      <div class="ch-num ch-num-lt">VI</div>
+      <div>
+        <span class="ch-sub ch-sub-lt">"If you want to understand a teacher, look at his students."</span>
+        <h2 class="ch-title ch-title-lt">What the Kodokan<br><em>Produced.</em></h2>
+      </div>
+    </div>
+    <div class="ch-1col ch-1col-lt fi" style="margin-bottom:3rem">
+      <p>Kano wrote: if you want to understand a teacher, look at his students. And so let us look. The students of the Kodokan went on to careers that no martial arts curriculum could have predicted because the curriculum was never only martial arts. It was an education in how to apply maximum efficiency and mutual benefit to any domain one entered. The mat was the laboratory. The rest of the world was where the results were measured. And the results were extraordinary. They are still being measured.</p>
+    </div>
+    <div class="stud-grid fi">
+      <div class="stud">
+        <div class="stud-name">Shiro Saigo</div>
+        <div class="stud-role">One of the Four Kings · Greatest Fighter of the Early Kodokan · Fifth Dan at Twenty One</div>
+        <p class="stud-body">A pocket Hercules of a man, well under five feet tall, who at fifty years old came across a group of foreign sailors beating a rickshaw driver on a bridge in Nagasaki. He was drunker than usual. The sailors laughed when they saw him coming: "Scram, midget." In a flash, the pocket Hercules hurled each of them into the river and walked home. He had been throwing larger men since he was sixteen and he never once stopped. His life became the basis of Akira Kurosawa's debut film and then six more films and five television series after that. Saigo became more legend than man, which is what the best students of the best teachers tend to become.</p>
+      </div>
+      <div class="stud">
+        <div class="stud-name">Kyuzo Mifune</div>
+        <div class="stud-role">Ninth Dan · The God of Judo · Never Defeated in Formal Competition</div>
+        <p class="stud-body">Grateful to his parents for giving him a small body because it forced him to train twice as hard as everyone else. "If my opponents train one hour I will train two. If they train two I will train three." He was never defeated in formal competition. When he was hospitalised with a life threatening infection Kano sent him a telegram that read simply: "Mifune, don't get thrown." Mifune said that simple message raised his spirit immensely and he recovered. He was still on the mat at seventy three. His five principal points end here: do not place hope in finding a secret technique. Polish the mind through ceaseless training. That is the key.</p>
+      </div>
+      <div class="stud">
+        <div class="stud-name">Yoshitsugu Yamashita</div>
+        <div class="stud-role">Seventh Dan · Carried Judo to the United States · Taught President Theodore Roosevelt</div>
+        <p class="stud-body">The philosopher and aesthete among the Four Kings. He carried the Kodokan to the United States in 1902 and eventually gave private lessons to President Roosevelt at the White House. Roosevelt trained with such enthusiasm that he achieved the rank of brown belt, an achievement he considered among the most satisfying of his presidency. This is what judo does to people who approach it seriously and honestly. It reveals something in them that other activities do not reach and cannot find.</p>
+      </div>
+      <div class="stud">
+        <div class="stud-name">Mitsuyo Maeda</div>
+        <div class="stud-role">Fourth Dan · Founded Brazilian Jiu Jitsu · The Kodokan's Traveling Ambassador</div>
+        <p class="stud-body">Maeda traveled to the Americas winning dozens of challenge matches across North and South America. In Brazil he taught the Gracie family. What he taught them became, over the following century, Brazilian jiu jitsu, practiced by millions of people worldwide. Every BJJ practitioner alive is in an unbroken lineage a student of the Kodokan. Every submission grappling gym on earth carries a piece of the twelve mat room at Eisho ji Temple. One man, one system, rippling outward still.</p>
+      </div>
+      <div class="stud">
+        <div class="stud-name">Katsuko Kosaki</div>
+        <div class="stud-role">First Woman Black Belt in the History of the Kodokan · 1933</div>
+        <p class="stud-body">She found a book about judo in a bookstore when she was eighteen. She read it cover to cover. She decided then and there that judo was for her. She trained in secret from her parents. She defeated three male opponents in a row at the rank examination. In 1933 she became the first woman black belt in the history of the Kodokan. She opened her own dojo two years after that. She was a woman who found a book in a bookstore and decided to become someone different. And she did. Her story became Lady Sanshiro on television. The mat is the answer to the question you are quietly asking about your child right now.</p>
+      </div>
+      <div class="stud">
+        <div class="stud-name">Noriko Yasuda and Keiko Fukuda</div>
+        <div class="stud-role">Two Women Who Proved What Judo Actually Is</div>
+        <p class="stud-body">Yasuda came to the Kodokan in 1884, weak and sickly, mentally as well as physically. A year into training she climbed Mount Fuji with a mixed group and reached the summit first. Fukuda was under five feet tall and weighed less than a hundred pounds. She taught judo in the United States into her nineties, through Parkinson's disease and arthritis and two heart attacks and a triple bypass. Her motto: "Be gentle, kind, and beautiful, yet firm and strong, both mentally and physically." She was still on the mat at this writing. The mat is the answer to nearly every objection you have ever raised about whether your child is capable of this.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CH VII -->
+<div class="ch bg-fg" id="ch7" style="border-bottom-color:rgba(255,255,255,0.06)">
+  <div class="ch-inner">
+    <div class="ch-hd fi">
+      <div class="ch-num ch-num-lt">VII</div>
+      <div>
+        <span class="ch-sub ch-sub-lt">The Legacy · 1882 to the Present Day</span>
+        <h2 class="ch-title ch-title-lt">What Survives<br>a <em>Great Teacher.</em></h2>
+      </div>
+    </div>
+    <div class="ch-2col">
+      <div class="ch-col ch-col-lt fi">
+        <p>Jigoro Kano died in 1938 aboard a ship returning from Cairo where he had attended a meeting of the International Olympic Committee. He was seventy seven years old. He had spent his entire adult life doing two things simultaneously: building the Kodokan into an international institution and campaigning for the inclusion of judo in the Olympic Games. He did not live to see the second goal achieved. Judo became an Olympic sport in 1964 in Tokyo, twenty six years after his death. He had known it would happen. He had set it in motion and trusted that the drops of water would eventually wear down the stone.</p>
+        <p>His guiding calligraphic motto, the one he returned to most often, brushed at ceremonies and on pieces of paper given away to whoever asked: Hyakuda Fubatsu. <strong>One hundred blows, not a single retreat.</strong> Stevens writes that this was the guiding principle of Kano's life. It is also the most honest description of what judo training is at every level from white belt to black. Not grace, necessarily. Not elegance, at the beginning. One hundred attempts at the same throw and you do not retreat from the discomfort and eventually the body understands what the mind has been trying to tell it all along.</p>
+      </div>
+      <div class="ch-col ch-col-lt fi fi-d1">
+        <p>What Kano left behind is difficult to enumerate and impossible to fully measure. The most widely distributed martial art on earth, practiced in a hundred and forty three countries. The Kodokan, still operational in Tokyo, still training. The concept of systematic physical education which he introduced to Japan and which has since spread through every modern school system on earth. Brazilian jiu jitsu, through Maeda and the Gracies, practiced by millions. Two prime ministers of Japan. A president's judo coach. A generation of Chinese revolutionaries. A famous novelist. A media mogul. And a woman who found the whole thing in a bookstore at eighteen and became the first female black belt in the history of the art.</p>
+        <p>But the most durable thing Kano left is harder to point to than any of those. It is the idea that physical practice and moral development are not separate activities, that what the body learns the person becomes, and that a discipline designed to train the body in maximum efficiency and mutual benefit will, over time and through enough honest repetition, produce a person who acts with maximum efficiency and mutual benefit in every domain they inhabit. <strong>This idea has not aged. It has not been superseded. What sports science now studies Kano already described in 1882 in a twelve mat room at a Buddhist temple with nine students and a purpose.</strong></p>
+        <div class="ki ki-dark" style="margin-top:2rem">
+          <span class="ki-lbl">Kano's calligraphic motto · Brushed many times · Usually without his seal because he could never find it</span>
+          <p class="ki-text">"Nothing under heaven is more important than education. The teaching of one virtuous person can influence many. That which has been learned well by one generation will pass on to a hundred."</p>
+        </div>
+      </div>
+    </div>
+    <div class="motto-grid fi" style="margin-top:4rem">
+      <div class="motto-card"><span class="motto-kanji">水滴石穿</span><div class="motto-eng">Drops of Water Wear Down a Stone</div><p class="motto-body">Not force. Persistence. The patient application of small and consistent effort over a timescale most people do not have the courage to commit to. This is also a description of how a child develops.</p></div>
+      <div class="motto-card"><span class="motto-kanji">百打不抜</span><div class="motto-eng">One Hundred Blows, Not a Single Retreat</div><p class="motto-body">The guiding principle of Kano's life and the most honest description of what judo training actually is at every level from the first white belt to the last black one.</p></div>
+      <div class="motto-card"><span class="motto-kanji">少壮不努力</span><div class="motto-eng">No Effort in Youth, No Gain When Old</div><p class="motto-body">Not an admonishment. A description of how the body actually works. The window for laying the physical foundation is not as long as we like to assume and it begins earlier than we think.</p></div>
+      <div class="motto-card"><span class="motto-kanji">勤是楽</span><div class="motto-eng">Movement Is Bliss</div><p class="motto-body">Not a consolation. A statement of fact about the physiology of a body that moves regularly and is trained well and is used honestly every day of the life it is given.</p></div>
+      <div class="motto-card"><span class="motto-kanji">盡己竢成</span><div class="motto-eng">Great Effort, Great Result</div><p class="motto-body">"The true road to success is effort, not natural talent or good luck." This is what Stevens calls the summary of Kano's entire philosophy of achievement. It fits on four characters.</p></div>
+      <div class="motto-card"><span class="motto-kanji">明鏡止水</span><div class="motto-eng">Clear Mirror, Still Water</div><p class="motto-body">The ideal state of mind. Polished and serene, like a clear mirror and still water. This is what decades of serious and honest practice can eventually produce in a person who does not retreat.</p></div>
+    </div>
+    <div class="leg-grid fi">
+      <div class="leg-stat"><span class="leg-n">1882</span><span class="leg-l">Year the Kodokan was founded · twelve mats, nine students, one twenty two year old man who believed education was the whole point</span></div>
+      <div class="leg-stat"><span class="leg-n">143</span><span class="leg-l">Countries in which judo is practiced today · the most widely distributed martial art on earth by a considerable distance</span></div>
+      <div class="leg-stat"><span class="leg-n">1964</span><span class="leg-l">Year judo became an Olympic sport · in Tokyo · twenty six years after Kano died on a ship returning from Cairo</span></div>
+      <div class="leg-stat"><span class="leg-n">8,000</span><span class="leg-l">Chinese exchange students at Kano's Kobun Gakuen · including several architects of the Chinese Republic</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="bg-fg" style="padding:6rem 2.5rem;text-align:center;border-top:0.5px solid rgba(255,255,255,0.06)">
+  <span style="font-family:var(--serif);font-size:6rem;color:rgba(179,144,79,0.16);letter-spacing:0.4em;display:block;margin-bottom:2rem;font-weight:300">柔 道</span>
+  <h2 class="h2 h2-lt" style="margin:0 auto 1.5rem;max-width:32ch">The mat is waiting. The principles have not changed since 1882 and they will not change.</h2>
+  <p class="body body-lt" style="max-width:50ch;margin:0 auto 2.5rem">Kota Permai Judo Club is building a founding membership of thirty adults and a children's programme that holds itself to the standard Jigoro Kano set in a twelve mat room at a Buddhist temple in Tokyo. Come train with us.</p>
+  <button class="btn btn-au" onclick="goPage('contact')">Enquire About Membership</button>
+</div>
+
+</div>
+
+<!-- ════════════════════════════════ PROGRAMME ════════════════════════════════ -->
+<div class="page" id="page-prog">
+
+<section class="bg-gd" style="min-height:50vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 2.5rem 4.5rem">
+  <div class="eyebrow eyebrow-lt">Kota Permai Judo Club · Full Programme</div>
+  <h1 class="h1 h1-lt" style="max-width:18ch">Structured for every<br><em>stage of the journey.</em></h1>
+</section>
+
+<section class="sec bg-w">
+  <div class="sec-inner">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem">
+      <div><span class="label">The Programme</span><h2 class="h2">Three tiers.<br><em>One philosophy.</em></h2></div>
+      <button class="btn btn-g" onclick="goPage('contact')">Book a Trial</button>
+    </div>
+    <div class="g3 gap-2px" style="margin-bottom:2px">
+
+      <div class="card-pad bg-c fi">
+        <div class="prog-tier">Tier I</div>
+        <div class="prog-name">Juniors</div>
+        <div class="prog-ages">Ages 4 to 6 years</div>
+        <div class="prog-rule"></div>
+        <p class="prog-desc">The youngest members of the club learn one thing above all others. How to move without fear. Not confidence as a feeling, which the world can give and take away with the changing of a season, but confidence as a physical fact deposited into the body during the years when the body still accepts deposits of that kind most readily and holds them longest. The curriculum is built around ukemi, the art of falling safely, and the foundational motor patterns that judo will inhabit as the child grows into an athlete and then into an adult. Every child who passes through this tier carries something through every subsequent physical encounter in her life that her peers will notice and will not be able to explain to themselves.</p>
+        <ul class="sched">
+          <li><span class="sd">Saturday</span><span class="st">10:00 to 12:00</span></li>
+          <li><span class="sd">Sunday</span><span class="st">10:00 to 12:00</span></li>
+          <li><span class="sd">Frequency</span><span class="st">Twice weekly</span></li>
+          <li><span class="sd">Duration</span><span class="st">60 minute sessions</span></li>
+        </ul>
+      </div>
+
+      <div class="card-pad bg-g fi fi-d1">
+        <div class="prog-tier prog-tier-lt">Tier III · Flagship</div>
+        <div class="prog-name prog-name-lt">Adults</div>
+        <div class="prog-ages prog-ages-lt">All experience levels welcome</div>
+        <div class="prog-rule prog-rule-lt"></div>
+        <p class="prog-desc prog-desc-lt">Three sessions per week for the founding membership of thirty. Structured for the competitive practitioner and for the social member alike, because in a well run judo session both of them receive exactly the same thing: immediate and honest feedback about where they actually are. The mat does not flatter and it does not lie and it does not care what you did before you walked in. This is the heartbeat of the club's community identity and the place where a senior professional and a younger member find themselves on equal footing in a grip contest that no boardroom experience prepares either of them for and nothing else provides.</p>
+        <ul class="sched sched-lt">
+          <li><span class="sd sd-lt">Thursday</span><span class="st st-lt">7:00 to 9:00 pm</span></li>
+          <li><span class="sd sd-lt">Friday</span><span class="st st-lt">7:00 to 9:00 pm</span></li>
+          <li><span class="sd sd-lt">Saturday</span><span class="st st-lt">5:00 to 7:00 pm</span></li>
+          <li><span class="sd sd-lt">Membership Target</span><span class="st st-lt">30 Founding Members</span></li>
+        </ul>
+      </div>
+
+      <div class="card-pad bg-c fi fi-d2">
+        <div class="prog-tier">Tier II</div>
+        <div class="prog-name">Kids</div>
+        <div class="prog-ages">Ages 7 and above</div>
+        <div class="prog-rule"></div>
+        <p class="prog-desc">Structured technique and belt progression and the social discipline of training with a partner who is trying as hard as you are, for as long as you are, on the same mat. Children at this level learn foundational throws and grip fighting and basic groundwork in a curriculum that advances with demonstrable competency at each belt transition. And they also learn something considerably harder than any technical skill. How to lose well. How to try again without complaint. How to respect an opponent without diminishing yourself. The mat teaches these things with a consistency and an honesty that no classroom on earth can match.</p>
+        <ul class="sched">
+          <li><span class="sd">Weekend</span><span class="st">Twice weekly</span></li>
+          <li><span class="sd">Schedule</span><span class="st">Confirmed on enrolment</span></li>
+          <li><span class="sd">Pathway</span><span class="st">White to Black Belt</span></li>
+          <li><span class="sd">Coming 2026</span><span class="st">Weekday after school</span></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="bg-fg" style="padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap">
+      <div>
+        <div class="label label-lt" style="margin-bottom:0.5rem">Expanding in 2026</div>
+        <p style="font-family:var(--serif);font-size:1rem;font-style:italic;color:rgba(240,233,218,0.62);font-weight:300;max-width:64ch;line-height:1.65">The weekday after school programme, running every afternoon Monday to Friday, replacing conventional childcare with something that builds character and physical formation simultaneously in a controlled and structured environment at the address you already trust. Enrolment will be offered to existing member families first, before any announcement is made publicly.</p>
+      </div>
+      <button class="btn btn-ghost-lt" onclick="goPage('contact')">Register Interest</button>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-cdk" style="border-top:0.5px solid var(--br)">
+  <div class="sec-inner">
+    <div class="g2">
+      <div class="fi">
+        <span class="label">Membership</span>
+        <h2 class="h2">We prefer to begin<br>with a <em>conversation.</em></h2>
+        <p class="body" style="margin-top:2rem">The club is building toward a founding adult membership of thirty committed practitioners training three sessions per week. This is not an arbitrary number. It is the threshold at which a judo club develops a genuine culture, enough variation in experience and temperament to make every session instructive, and small enough that every member knows every other member by name and by grip and by the way they move under pressure.</p>
+        <p class="body">Children's enrolment is managed to preserve the quality of individual attention that a premium programme requires. As the club grows toward its after school integration model in 2026, places will be offered to families within the existing membership first, before any external announcement is made.</p>
+        <p class="body">Membership rates are shared upon direct enquiry. We do not list them publicly because we want the first conversation to be about what the club can do for your family, not about a number on a page that tells you nothing about what you are actually joining.</p>
+        <div style="display:flex;gap:0.8rem;margin-top:2.2rem;flex-wrap:wrap">
+          <button class="btn btn-g" onclick="goPage('contact')">Enquire About Membership</button>
+          <a href="https://wa.me/60XXXXXXXXXX" class="btn btn-go">WhatsApp Us</a>
+        </div>
+      </div>
+      <div class="fi fi-d1">
+        <div class="std-box">
+          <div class="std-head">Membership Standards</div>
+          <div class="std-item"><div class="std-title">Commitment · Minimum Three Sessions Weekly</div><div class="std-body">The minimum frequency at which judo produces what it is capable of producing. Below this threshold the body does not consolidate the patterns and the community does not form and the investment does not compound.</div></div>
+          <div class="std-item"><div class="std-title">Respect · On the Mat and Off It</div><div class="std-body">The conduct that a club at this address has always demanded of its members in whatever practice they share its grounds, whether that practice is on the fairways or on the mat.</div></div>
+          <div class="std-item"><div class="std-title">Longevity · A Decades Long Practice</div><div class="std-body">The families who join in the founding season are being invited into something that will outlast the first year. That is the correct timescale for what is being built here. We are not building for next month.</div></div>
+          <div class="std-item"><div class="std-title">Kota Permai Membership · Required for Adults</div><div class="std-body">Adult judo members are guests of the Golf and Country Club. Existing KPGCC members receive priority placement in the founding cohort and we strongly encourage you to reach out early.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec bg-w" style="border-top:0.5px solid var(--br)">
+  <div class="sec-inner">
+    <div style="max-width:54ch;margin-bottom:3.5rem">
+      <span class="label">Programme Rates</span>
+      <h2 class="h2">Structured for<br><em>every family.</em></h2>
+      <p class="body" style="margin-top:1rem">Rates are structured to reward commitment. The members who train regularly and hold their grading standards receive our best rates because they are also the members who build the culture that makes this club worth joining in the first place.</p>
+    </div>
+    <div class="g3 gap-2px">
+      <div class="card-pad bg-c fi">
+        <div class="price-lbl">Juniors Programme</div>
+        <div class="price-name">Little Champions</div>
+        <div class="price-for">Ages 4 to 6 · Weekend Sessions</div>
+        <div class="price-hr"></div>
+        <div class="price-num">RM 350</div>
+        <div class="price-per">Per month · 8 sessions</div>
+        <ul class="feats">
+          <li>Saturday and Sunday, 10:00 to 12:00</li>
+          <li>Ukemi and foundational motor skills</li>
+          <li>Judogi included in the first month</li>
+          <li>Belt progression from yellow onward</li>
+        </ul>
+        <button class="btn btn-go" style="width:100%;padding:0.92rem;font-size:0.66rem" onclick="goPage('contact')">Enquire</button>
+      </div>
+      <div class="card-pad bg-fg fi fi-d1">
+        <div class="price-lbl price-lbl-lt">Flagship · Most Popular</div>
+        <div class="price-name price-name-lt">Adults Membership</div>
+        <div class="price-for price-for-lt">All Levels · Three Sessions Weekly</div>
+        <div class="price-hr price-hr-lt"></div>
+        <div class="price-num price-num-lt">RM 480</div>
+        <div class="price-per price-per-lt">Per month · Unlimited sessions</div>
+        <ul class="feats feats-lt">
+          <li>Thursday and Friday 7 to 9 pm · Saturday 5 to 7 pm</li>
+          <li>Structured technical training and randori</li>
+          <li>Grading pathway to Black Belt</li>
+          <li>Access to Kota Permai Club facilities</li>
+          <li>Founding member rates locked for 24 months from enrolment</li>
+        </ul>
+        <button class="btn btn-au" style="width:100%;padding:0.92rem;font-size:0.66rem;border:none;cursor:pointer" onclick="goPage('contact')">Book a Trial</button>
+      </div>
+      <div class="card-pad bg-c fi fi-d2">
+        <div class="price-lbl">Kids Programme</div>
+        <div class="price-name">Rising Judoka</div>
+        <div class="price-for">Ages 7 and above · Weekend Sessions</div>
+        <div class="price-hr"></div>
+        <div class="price-num">RM 420</div>
+        <div class="price-per">Per month · 8 sessions</div>
+        <ul class="feats">
+          <li>Weekend sessions, twice weekly</li>
+          <li>Structured curriculum and belt progression</li>
+          <li>Throws, groundwork and competition preparation</li>
+          <li>Malaysian Judo Association grading pathway</li>
+        </ul>
+        <button class="btn btn-go" style="width:100%;padding:0.92rem;font-size:0.66rem" onclick="goPage('contact')">Enquire</button>
+      </div>
+      <div style="grid-column:1/-1;padding:1.8rem 2.2rem;background:var(--aup);border-top:0.5px solid var(--au);font-size:0.78rem;color:var(--fgm);line-height:1.72;font-weight:300"><strong style="font-weight:500;color:var(--fg)">Family Enrolment:</strong> Families enrolling two or more members receive a 15% reduction on the combined monthly rate. A child in the Juniors programme whose parent joins the adult membership receives priority placement in the 2026 after school programme. All rates are founding member rates locked for 24 months from the date of enrolment. Drop in rate: <strong style="font-weight:500;color:var(--fg)">RM 80 per session</strong> for guests and trial attendees.</div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- ════════════════════════════════ JUDOGI ════════════════════════════════ -->
+<div class="page" id="page-judogi">
+
+<section class="store-hero">
+  <div class="store-ghost">JUDOGI</div>
+  <div class="store-badge">
+    <span class="store-badge-dot"></span>
+    <span class="store-badge-text">Official Fighting Films Distributor · Malaysia</span>
+  </div>
+  <h1 class="h1 h1-lt" style="max-width:14ch">The Choice<br>of <em>Champions.</em></h1>
+  <div class="store-foot">
+    <p class="body body-lt" style="max-width:46ch">Kota Permai Judo Club is the official Malaysian distributor of Fighting Films judogi. The brand worn by Olympic champions and World Champions and the athletes in every country who are training with the full intention of becoming them. Available exclusively through the club.</p>
+    <div class="store-stats">
+      <div><span class="ssn">IJF</span><span class="ssl">Approved · All 3 Models</span></div>
+      <div><span class="ssn">70/30</span><span class="ssl">Cotton Polyester Blend</span></div>
+      <div><span class="ssn">Paris</span><span class="ssl">2024 · The Gold Medallist Wore the 750</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="mq-band bg-au mq-au">
+  <div class="mq-inner">
+    <span class="mq-item">Fighting Films · The Choice of Champions</span><span class="mq-item dk">·</span><span class="mq-item">IJF Approved · Superstar 650 · Superstar 750 · Olympic Edition</span><span class="mq-item dk">·</span><span class="mq-item">Official Malaysian Distributor · Kota Permai Judo Club</span><span class="mq-item dk">·</span><span class="mq-item">Paris 2024 · Andreja Leški · Prisca Awiti Alcaraz</span><span class="mq-item dk">·</span><span class="mq-item">Fighting Films · The Choice of Champions</span><span class="mq-item dk">·</span><span class="mq-item">IJF Approved · Superstar 650 · Superstar 750 · Olympic Edition</span><span class="mq-item dk">·</span><span class="mq-item">Official Malaysian Distributor · Kota Permai Judo Club</span><span class="mq-item dk">·</span><span class="mq-item">Paris 2024 · Andreja Leški · Prisca Awiti Alcaraz</span><span class="mq-item dk">·</span>
+  </div>
+</div>
+
+<div class="partner">
+  <div style="display:flex;align-items:center;gap:1.5rem">
+    <div class="ff-box">Fighting Films</div>
+    <p class="body body-lt" style="max-width:52ch"><strong>Official Malaysian Distributor, 2025.</strong> Kota Permai Judo Club has entered into a distribution agreement with Fighting Films UK, the world's leading judo equipment brand and official supplier to national judo federations across Europe and partner to the International Judo Federation, to make the Superstar range available to Malaysian judoka exclusively through this club address.</p>
+  </div>
+  <button class="btn btn-cream" onclick="document.getElementById('store-order').scrollIntoView({behavior:'smooth'})">Order Your Judogi</button>
+</div>
+
+<section class="sec bg-w">
+  <div class="sec-inner">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3.5rem;flex-wrap:wrap;gap:1.5rem">
+      <div><span class="label">Elite Collection</span><h2 class="h2">Three levels.<br><em>One standard.</em></h2></div>
+    </div>
+
+    <div class="prod-grid">
+
+      <div class="prod-card fi" onclick="toggleDet('d650')">
+        <div class="prod-img">
+          <div class="prod-badge">IJF Approved</div>
+          <span class="prod-kanji-big">650</span>
+          <span class="prod-kanji-sub">Superstar 650 · Lightweight Competition</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-tier">Elite · Lightweight Competition</div>
+          <div class="prod-name">Superstar 650</div>
+          <div class="prod-tag">Lightweight IJF Approved · Slim and Super Slim Fit</div>
+          <div class="prod-pr">From RM 550</div>
+          <span class="prod-pr-lbl">Price varies by size and fit</span>
+          <ul class="prod-feats">
+            <li class="prod-feat">IJF Approved for all international competition</li>
+            <li class="prod-feat">Double weave, lighter weight than the 750</li>
+            <li class="prod-feat">Super Slim fit for tall and lean judoka</li>
+            <li class="prod-feat">70% Cotton 30% Polyester · approximately 2% shrinkage</li>
+            <li class="prod-feat">Children: 145 to 155cm · Adults: 160 to 175cm</li>
+          </ul>
+          <div class="prod-colors"><span class="prod-colors-lbl">Colours</span><span class="cdot cdot-w"></span><span class="cdot cdot-b"></span></div>
+          <button class="prod-btn-out">View Details and Order</button>
+        </div>
+      </div>
+
+      <div class="prod-card fi fi-d1" onclick="toggleDet('d750')">
+        <div class="prod-img">
+          <div class="prod-badge">Best Seller</div>
+          <span class="prod-kanji-big">750</span>
+          <span class="prod-kanji-sub">Superstar 750 · The Crown Jewel</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-tier">Elite · IJF Competition Standard</div>
+          <div class="prod-name">Superstar 750</div>
+          <div class="prod-tag">The Crown Jewel · Worn by Olympic and World Champions</div>
+          <div class="prod-pr">From RM 750</div>
+          <span class="prod-pr-lbl">Price varies by size and fit</span>
+          <ul class="prod-feats">
+            <li class="prod-feat">Fully IJF Approved for all international competitions</li>
+            <li class="prod-feat">Standard Fit and Large Fit options available</li>
+            <li class="prod-feat">70% Cotton 30% Polyester · approximately 2% shrinkage</li>
+            <li class="prod-feat">Sizes 140cm to 200cm available</li>
+            <li class="prod-feat">Embroidery and personalisation available</li>
+          </ul>
+          <div class="prod-colors"><span class="prod-colors-lbl">Colours</span><span class="cdot cdot-w"></span><span class="cdot cdot-b"></span></div>
+          <button class="prod-btn-fill">View Details and Order</button>
+        </div>
+      </div>
+
+      <div class="prod-card fi fi-d2" onclick="toggleDet('doly')">
+        <div class="prod-img">
+          <div class="prod-badge prod-badge-au">Olympic Edition</div>
+          <span class="prod-kanji-big">OLY</span>
+          <span class="prod-kanji-sub">750 Olympic Edition · Paris 2024</span>
+        </div>
+        <div class="prod-body">
+          <div class="prod-tier">Elite · Olympic Specification</div>
+          <div class="prod-name">Superstar 750 Olympic Edition</div>
+          <div class="prod-tag">IJF Approved · Olympic Specification · Paris 2024</div>
+          <div class="prod-pr">From RM 780</div>
+          <span class="prod-pr-lbl">Price varies by size and fit</span>
+          <ul class="prod-feats">
+            <li class="prod-feat">IJF Approved · 1 manufacturer logo 30cm squared maximum</li>
+            <li class="prod-feat">Worn by Paris 2024 Olympic Champion Andreja Leški at 63kg</li>
+            <li class="prod-feat">Worn by Silver Medallist Prisca Awiti Alcaraz at 63kg</li>
+            <li class="prod-feat">Do not add embroidery for Olympic competition use</li>
+            <li class="prod-feat">Sizes 150 to 200cm · Standard Fit or Large Fit</li>
+          </ul>
+          <div class="prod-colors"><span class="prod-colors-lbl">Colours</span><span class="cdot cdot-w"></span><span class="cdot cdot-b"></span></div>
+          <button class="prod-btn-out">View Details and Order</button>
+        </div>
+      </div>
+
+      <!-- DET 650 -->
+      <div class="det-panel" id="d650">
+        <div class="det-img"><span class="det-kanji">650</span></div>
+        <div>
+          <span class="det-tier">Elite · Lightweight IJF Competition</span>
+          <div class="det-name">Superstar 650</div>
+          <p class="det-tag">To the same high Fighting Films standard as the 750, the Superstar 650 is their lighter weight double weave IJF approved competition judogi, introduced for the first time in a Super Slim sizing specifically for the young judoka who is tall and slim and finds standard cuts too wide to compete in comfortably.</p>
+          <div class="det-pr">From RM 550</div>
+          <div class="det-note">Final price confirmed on enquiry · Size and fit selection affect final pricing</div>
+          <span class="det-opt-lbl">Select Fit</span>
+          <div class="sz-row"><button class="sz on">Standard Fit</button><button class="sz">Super Slim Fit</button></div>
+          <span class="det-opt-lbl">Select Size</span>
+          <div class="sz-row"><button class="sz">145cm</button><button class="sz">150cm</button><button class="sz">155cm</button><button class="sz on">160cm</button><button class="sz">165cm</button><button class="sz">170cm</button><button class="sz">175cm</button></div>
+          <span class="det-opt-lbl" style="margin-top:1rem">Select Colour</span>
+          <div class="col-row"><span class="cs cs-w on" onclick="selC(this)"></span><span class="cs cs-b" onclick="selC(this)"></span></div>
+          <button class="det-add" onclick="goPage('contact')">Enquire to Order</button>
+          <a href="https://wa.me/60XXXXXXXXXX" class="det-wa">WhatsApp to Order</a>
+          <div class="det-tabs"><button class="det-tab on" onclick="dTab(this,'t650d')">Description</button><button class="det-tab" onclick="dTab(this,'t650s')">Specifications</button><button class="det-tab" onclick="dTab(this,'t650e')">Personalisation</button></div>
+          <div id="t650d" class="det-tc">The Superstar 650 is Fighting Films' lightest IJF approved competition judogi. Built to the same exacting standards as the heavier 750, it is the preferred choice of experienced judoka who compete at international level and want a lighter gi without sacrificing durability or compliance. The Super Slim cut is ideal for taller and leaner athletes who find standard cut judogi too wide, giving the opponent less fabric to work with and more difficulty in establishing a dominant grip.</div>
+          <div id="t650s" class="det-tc hidden"><div class="spec-r"><span class="spec-k">Material</span><span class="spec-v">70% Cotton, 30% Polyester</span></div><div class="spec-r"><span class="spec-k">Weight</span><span class="spec-v">650 gsm double weave</span></div><div class="spec-r"><span class="spec-k">IJF Approval</span><span class="spec-v">Yes · all international competitions</span></div><div class="spec-r"><span class="spec-k">Colours</span><span class="spec-v">White, Blue</span></div><div class="spec-r"><span class="spec-k">Children's Sizes</span><span class="spec-v">145cm, 150cm, 155cm</span></div><div class="spec-r"><span class="spec-k">Adult Sizes</span><span class="spec-v">160cm to 175cm</span></div><div class="spec-r"><span class="spec-k">Fits Available</span><span class="spec-v">Standard Fit, Super Slim Fit</span></div><div class="spec-r"><span class="spec-k">Shrinkage</span><span class="spec-v">Approximately 2% on first cold wash</span></div></div>
+          <div id="t650e" class="det-tc hidden">Personalisation and embroidery options are available for the Superstar 650. Name, club name, national flag and custom designs can all be added. Personalised items require 7 to 14 days additional fulfilment time. Enquire via WhatsApp or through the order form below for embroidery pricing and available options.</div>
+        </div>
+      </div>
+
+      <!-- DET 750 -->
+      <div class="det-panel" id="d750">
+        <div class="det-img"><span class="det-kanji">750</span></div>
+        <div>
+          <span class="det-tier">Elite · IJF Competition Standard · Best Seller</span>
+          <div class="det-name">Superstar 750</div>
+          <p class="det-tag">The crown jewel of the Fighting Films range. Fully IJF approved and worn by Olympic and World Champions at the highest levels of international competition. Fighting Films believe the 750 gives you that extra margin in competition and the evidence from Paris 2024 supports them.</p>
+          <div class="det-pr">From RM 750</div>
+          <div class="det-note">Final price confirmed on enquiry · Size and fit selection affect final pricing</div>
+          <span class="det-opt-lbl">Select Fit</span>
+          <div class="sz-row"><button class="sz on">Standard Fit</button><button class="sz">Large Fit</button></div>
+          <span class="det-opt-lbl">Select Size</span>
+          <div class="sz-row"><button class="sz">140cm</button><button class="sz">145cm</button><button class="sz">150cm</button><button class="sz">155cm</button><button class="sz on">160cm</button><button class="sz">165cm</button><button class="sz">170cm</button><button class="sz">175cm</button><button class="sz">180cm</button><button class="sz">185cm</button><button class="sz">190cm</button><button class="sz">195cm</button><button class="sz">200cm</button></div>
+          <span class="det-opt-lbl" style="margin-top:1rem">Select Colour</span>
+          <div class="col-row"><span class="cs cs-w on" onclick="selC(this)"></span><span class="cs cs-b" onclick="selC(this)"></span></div>
+          <button class="det-add" onclick="goPage('contact')">Enquire to Order</button>
+          <a href="https://wa.me/60XXXXXXXXXX" class="det-wa">WhatsApp to Order</a>
+          <div class="det-tabs"><button class="det-tab on" onclick="dTab(this,'t750d')">Description</button><button class="det-tab" onclick="dTab(this,'t750s')">Specifications</button><button class="det-tab" onclick="dTab(this,'t750k')">Skirt Length Rules</button></div>
+          <div id="t750d" class="det-tc">The Superstar 750 is Fighting Films' best selling judogi and the standard against which all other competition judogi in the world are measured. It has been worn by Olympic and World Champions at the highest levels of international competition and it is available from junior sizes all the way through to 200cm, the widest range of any model in the Fighting Films range.</div>
+          <div id="t750s" class="det-tc hidden"><div class="spec-r"><span class="spec-k">Material</span><span class="spec-v">70% Cotton, 30% Polyester</span></div><div class="spec-r"><span class="spec-k">Weight</span><span class="spec-v">750 gsm double weave</span></div><div class="spec-r"><span class="spec-k">IJF Approval</span><span class="spec-v">Yes · all international competitions</span></div><div class="spec-r"><span class="spec-k">Colours</span><span class="spec-v">White, Blue</span></div><div class="spec-r"><span class="spec-k">Sizes</span><span class="spec-v">140cm through 200cm</span></div><div class="spec-r"><span class="spec-k">Fits Available</span><span class="spec-v">Standard Fit, Large Fit</span></div><div class="spec-r"><span class="spec-k">Shrinkage</span><span class="spec-v">Approximately 2% on first cold wash</span></div></div>
+          <div id="t750k" class="det-tc hidden"><p style="margin-bottom:1rem;font-size:0.82rem;color:var(--fgm);font-weight:300;line-height:1.8">For IJF regulated competition the judogi skirt must cover the player's bottom by a minimum of 5cm, measured as the length of skirt below the belt at judogi control:</p><div class="spec-r"><span class="spec-k">20cm below belt</span><span class="spec-v">Ladies: 48, 52, 57, 63kg · Men's: 60, 66, 70, 73kg</span></div><div class="spec-r"><span class="spec-k">25cm below belt</span><span class="spec-v">Ladies: 70, 78, plus 78kg · Men's: 81, 90, 100, plus 100kg</span></div></div>
+        </div>
+      </div>
+
+      <!-- DET OLYMPIC -->
+      <div class="det-panel" id="doly">
+        <div class="det-img"><span class="det-kanji">OLY</span></div>
+        <div>
+          <span class="det-tier">Elite · Olympic Specification · Paris 2024</span>
+          <div class="det-name">Superstar 750 Olympic Edition</div>
+          <p class="det-tag">IJF Approved with exactly one manufacturer logo of 30cm squared, in line with Olympic specifications. Worn at the Paris 2024 Olympics by Andreja Leški who won gold at 63kg and by Prisca Awiti Alcaraz who won silver at 63kg. The highest specification judogi that Fighting Films produces.</p>
+          <div class="det-pr">From RM 780</div>
+          <div class="det-note">Important: do not add embroidery if this judogi is required for Olympic competition</div>
+          <span class="det-opt-lbl">Select Fit</span>
+          <div class="sz-row"><button class="sz on">Standard Fit</button><button class="sz">Large Fit</button></div>
+          <span class="det-opt-lbl">Select Size</span>
+          <div class="sz-row"><button class="sz">150cm</button><button class="sz">155cm</button><button class="sz on">160cm</button><button class="sz">165cm</button><button class="sz">170cm</button><button class="sz">175cm</button><button class="sz">180cm</button><button class="sz">185cm</button><button class="sz">190cm</button><button class="sz">195cm</button><button class="sz">200cm</button></div>
+          <span class="det-opt-lbl" style="margin-top:1rem">Select Colour</span>
+          <div class="col-row"><span class="cs cs-w on" onclick="selC(this)"></span><span class="cs cs-b" onclick="selC(this)"></span></div>
+          <button class="det-add" onclick="goPage('contact')">Enquire to Order</button>
+          <a href="https://wa.me/60XXXXXXXXXX" class="det-wa">WhatsApp to Order</a>
+          <div class="det-tabs"><button class="det-tab on" onclick="dTab(this,'tolyd')">Description</button><button class="det-tab" onclick="dTab(this,'tolys')">Specifications</button><button class="det-tab" onclick="dTab(this,'tolyn')">Important Notice</button></div>
+          <div id="tolyd" class="det-tc">The Superstar 750 Olympic Edition is the highest specification judogi in the Fighting Films range, manufactured to meet the IJF's Olympic specifications with a single manufacturer logo of no more than 30cm squared. It was worn at the Paris 2024 Olympics by two of the most decorated athletes of the Games competing at 63kg. If you are buying this for Olympic competition do not add embroidery. If you are buying it for everything else, the embroidery options are all open to you.</div>
+          <div id="tolys" class="det-tc hidden"><div class="spec-r"><span class="spec-k">Material</span><span class="spec-v">70% Cotton, 30% Polyester</span></div><div class="spec-r"><span class="spec-k">IJF Approval</span><span class="spec-v">Yes · Olympic specification</span></div><div class="spec-r"><span class="spec-k">Branding</span><span class="spec-v">1 manufacturer logo · 30cm squared maximum</span></div><div class="spec-r"><span class="spec-k">Colours</span><span class="spec-v">White, Blue</span></div><div class="spec-r"><span class="spec-k">Sizes</span><span class="spec-v">150cm through 200cm</span></div><div class="spec-r"><span class="spec-k">Paris 2024</span><span class="spec-v">Andreja Leški · Gold · Prisca Awiti Alcaraz · Silver</span></div></div>
+          <div id="tolyn" class="det-tc hidden">Do not add additional embroidery if this judogi is required for Olympic competition. The IJF permits only one manufacturer logo of 30cm squared for Olympic events and additional embroidery will make this judogi non compliant for that purpose. For club use and for non Olympic international competition embroidery may be added freely. Personalised and embroidered items require 7 to 14 additional days for fulfilment beyond the standard delivery timeline.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SIZING GUIDE -->
+<div class="sz-guide bg-fg" id="store-sizing">
+  <div class="sz-guide-inner">
+    <span class="label label-lt">Sizing Guide · Fighting Films Official</span>
+    <h2 class="h2 h2-lt" style="margin-bottom:4rem">Find your<br><em>perfect fit.</em></h2>
+    <div class="g2">
+      <div class="fi">
+        <div class="sz-rule-box">
+          <div class="sz-rule-title">The Golden Rule</div>
+          <p class="sz-rule-body"><strong>Always choose a judogi 5cm below your actual height.</strong> If you are 170cm tall you select the 165cm judogi. This accounts for the natural stretch of the fabric and ensures the correct competition fit after the first wash. Fighting Films confirm from extensive experience across their entire range that this is the correct method and it is the one they recommend without exception.</p>
+        </div>
+        <div class="sz-rule-box">
+          <div class="sz-rule-title">Shrinkage Allowance</div>
+          <p class="sz-rule-body">All Fighting Films judogi have approximately <strong>2% shrinkage</strong> on the first cold wash. Wash at 30 degrees or below, air dry naturally and do not use a tumble dryer. Following these care instructions will maintain the judogi's shape and weight and IJF compliance for years of serious competitive use.</p>
+        </div>
+        <div class="fit-grid">
+          <div class="fit-card"><span class="fit-card-lbl">Superstar 650</span><div class="fit-card-name">Standard Fit</div><p class="fit-card-body">Competition cut, close to the body. Recommended for most athletes. Minimises excess fabric that opponents can use to establish grips.</p></div>
+          <div class="fit-card"><span class="fit-card-lbl">Superstar 650 Only</span><div class="fit-card-name">Super Slim Fit</div><p class="fit-card-body">Even closer to the body. For tall and lean judoka specifically. Offers more comfort and more competitiveness for very slim frames.</p></div>
+          <div class="fit-card"><span class="fit-card-lbl">Superstar 750 and Olympic</span><div class="fit-card-name">Standard Fit</div><p class="fit-card-body">The default competition cut. Suitable for most body types from junior through adult and the most widely chosen option across both models.</p></div>
+          <div class="fit-card"><span class="fit-card-lbl">Superstar 750 and Olympic</span><div class="fit-card-name">Large Fit</div><p class="fit-card-body">For athletes with a broader build or wider shoulders or heavier body weight relative to their height who find the standard fit too restrictive.</p></div>
+        </div>
+      </div>
+      <div class="fi fi-d1">
+        <span class="sz-col-lbl">Children's and Junior Size Chart</span>
+        <table class="sz-table">
+          <thead><tr><th>Judogi Size</th><th>Athlete Height</th><th>Recommended Height</th><th>Models</th></tr></thead>
+          <tbody>
+            <tr><td class="sz-n">140cm</td><td>140 to 148cm</td><td class="sz-rec">145cm athlete</td><td>750, Olympic</td></tr>
+            <tr><td class="sz-n">145cm</td><td>145 to 153cm</td><td class="sz-rec">150cm athlete</td><td>650, 750, Olympic</td></tr>
+            <tr><td class="sz-n">150cm</td><td>150 to 158cm</td><td class="sz-rec">155cm athlete</td><td>650, 750, Olympic</td></tr>
+            <tr><td class="sz-n">155cm</td><td>155 to 163cm</td><td class="sz-rec">160cm athlete</td><td>650, 750, Olympic</td></tr>
+          </tbody>
+        </table>
+        <span class="sz-col-lbl" style="margin-top:2rem">Adult Size Chart</span>
+        <table class="sz-table">
+          <thead><tr><th>Judogi Size</th><th>Athlete Height</th><th>Recommended Height</th><th>Models</th></tr></thead>
+          <tbody>
+            <tr><td class="sz-n">160cm</td><td>160 to 168cm</td><td class="sz-rec">165cm athlete</td><td>650, 750, Olympic</td></tr>
+            <tr><td class="sz-n">165cm</td><td>165 to 173cm</td><td class="sz-rec">170cm athlete</td><td>650, 750, Olympic</td></tr>
+            <tr><td class="sz-n">170cm</td><td>170 to 178cm</td><td class="sz-rec">175cm athlete</td><td>650, 750, Olympic</td></tr>
+            <tr><td class="sz-n">175cm</td><td>175 to 183cm</td><td class="sz-rec">180cm athlete</td><td>750, Olympic</td></tr>
+            <tr><td class="sz-n">180cm</td><td>180 to 188cm</td><td class="sz-rec">185cm athlete</td><td>750, Olympic</td></tr>
+            <tr><td class="sz-n">185cm</td><td>185 to 193cm</td><td class="sz-rec">190cm athlete</td><td>750, Olympic</td></tr>
+            <tr><td class="sz-n">190cm</td><td>190 to 198cm</td><td class="sz-rec">195cm athlete</td><td>750, Olympic</td></tr>
+            <tr><td class="sz-n">200cm</td><td>200cm and above</td><td class="sz-rec">200cm athlete</td><td>750, Olympic</td></tr>
+          </tbody>
+        </table>
+        <div class="skirt-title">IJF Skirt Length Requirements for Competition</div>
+        <div class="skirt-row"><span class="skirt-len">20cm</span><span class="skirt-cats">Ladies: 48kg, 52kg, 57kg, 63kg<br>Men's: 60kg, 66kg, 70kg, 73kg</span></div>
+        <div class="skirt-row"><span class="skirt-len">25cm</span><span class="skirt-cats">Ladies: 70kg, 78kg, plus 78kg<br>Men's: 81kg, 90kg, 100kg, plus 100kg</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="sec bg-cdk" style="border-top:0.5px solid var(--br)">
+  <div class="sec-inner">
+    <span class="label">Care Instructions</span>
+    <h2 class="h2" style="margin-bottom:3rem">Protect your<br><em>investment.</em></h2>
+    <div class="g4 gap-2px fi">
+      <div class="care-card"><span class="care-icon">🌡</span><div class="care-title">Cold Wash Only</div><p class="care-body">30 degrees maximum. Higher temperatures degrade the cotton polyester blend, affect the weave density, and can cause shrinkage beyond the expected 2%. IJF compliance over the long term depends on maintaining fabric integrity from the very first wash.</p></div>
+      <div class="care-card"><span class="care-icon">🌬</span><div class="care-title">Air Dry Naturally</div><p class="care-body">Never tumble dry. Hang or lay flat in a well ventilated area and let it dry naturally. Tumble drying causes uneven shrinkage, weakens seams, and reduces collar firmness, and the collar is structurally critical in competition.</p></div>
+      <div class="care-card"><span class="care-icon">📐</span><div class="care-title">Store Flat or Folded</div><p class="care-body">Store flat or neatly folded to maintain collar shape. The collar is the most technically important component of the judogi and it must remain firm enough to be gripped reliably under full competition intensity.</p></div>
+      <div class="care-card"><span class="care-icon">📋</span><div class="care-title">Check Before Competition</div><p class="care-body">Verify skirt length and sleeve measurements before every IJF event. Judogi control is strict and unforgiving. Shrinkage and wear accumulate over time even in the best maintained judogi and must be monitored regularly.</p></div>
+    </div>
+  </div>
+</section>
+
+<div id="store-order" class="bg-g" style="padding:5rem 2.5rem;text-align:center">
+  <h2 class="h2 h2-lt" style="margin-bottom:1rem">Ready to Order?</h2>
+  <p class="body body-lt" style="max-width:50ch;margin:0 auto 2.5rem">Fighting Films judogi are available exclusively through Kota Permai Judo Club in Malaysia. All orders are placed directly through the club. Enquire by email or by WhatsApp and we will confirm availability and sizing and delivery.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+    <a href="mailto:judo@kotapermai.com.my?subject=Judogi Order Enquiry" class="btn btn-au">Email to Order</a>
+    <a href="https://wa.me/60XXXXXXXXXX?text=I'd like to order a Fighting Films judogi from KPJC" class="btn btn-ghost-lt">WhatsApp to Order</a>
+  </div>
+</div>
+
+</div>
+
+<!-- ════════════════════════════════ CONTACT ════════════════════════════════ -->
+<div class="page" id="page-contact">
+
+<section class="sec bg-g">
+  <div class="sec-inner">
+    <span class="label label-lt">Get in Touch</span>
+    <h2 class="h2 h2-lt" style="margin-bottom:4rem">Begin with a<br><em>conversation.</em></h2>
+    <div class="g2">
+      <div class="fi">
+        <form class="form-wrap" onsubmit="handleForm(event)">
+          <div class="form-grp"><label>Your Name</label><input type="text" placeholder="Full name" required></div>
+          <div class="form-grp"><label>Email Address</label><input type="email" placeholder="your@email.com" required></div>
+          <div class="form-grp"><label>Phone or WhatsApp Number</label><input type="tel" placeholder="+60 12 345 6789"></div>
+          <div class="form-grp"><label>I am interested in</label>
+            <select>
+              <option>Adult Membership</option>
+              <option>Juniors Programme (Ages 4 to 6)</option>
+              <option>Kids Programme (Ages 7 and above)</option>
+              <option>Family Enrolment</option>
+              <option>Fighting Films Judogi</option>
+              <option>After School Programme 2026</option>
+              <option>General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-grp"><label>Tell us about yourself or your child</label><textarea placeholder="Any prior martial arts experience? Age of child? What are you hoping to build?"></textarea></div>
+          <button type="submit" class="form-submit">Send Enquiry</button>
+        </form>
+      </div>
+      <div class="fi fi-d1">
+        <div class="ci"><span class="ci-lbl">Location</span><div class="ci-val">Kota Permai Golf and Country Club<br>No. 1, Jalan 31/100A, Kota Kemuning<br>Section 31, 40460 Shah Alam, Selangor</div></div>
+        <div class="ci"><span class="ci-lbl">Club Phone</span><div class="ci-val">+603 5122 3700</div></div>
+        <div class="ci"><span class="ci-lbl">Judo Programme Enquiries</span><div class="ci-val">judo@kotapermai.com.my</div></div>
+        <div class="ci"><span class="ci-lbl">Adult Sessions</span><div class="ci-val">Thursday and Friday · 7:00 to 9:00 pm<br>Saturday · 5:00 to 7:00 pm</div></div>
+        <div class="ci"><span class="ci-lbl">Junior and Kids Sessions</span><div class="ci-val">Saturday and Sunday · 10:00 am to 12:00 pm</div></div>
+        <a href="https://wa.me/60XXXXXXXXXX" class="btn btn-cream" style="margin-top:2rem;display:inline-block">Message Us on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div>
+      <div class="ft-bn">Kota Permai Judo Club</div>
+      <div class="ft-bs">Kota Permai Golf and Country Club · Est. 2025</div>
+      <p class="ft-tag">"Nothing under heaven is more important than education. That which has been learned well by one generation will pass on to a hundred." · Jigoro Kano</p>
+    </div>
+    <div class="ft-col">
+      <div class="ft-cl">Navigate</div>
+      <ul>
+        <li><a onclick="goPage('home')">Home</a></li>
+        <li><a onclick="goPage('phil')">Philosophy</a></li>
+        <li><a onclick="goPage('prog')">Programme</a></li>
+        <li><a onclick="goPage('judogi')">Judogi Shop</a></li>
+        <li><a onclick="goPage('contact')">Contact</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <div class="ft-cl">Programme</div>
+      <ul>
+        <li><a onclick="goPage('prog')">Juniors · Ages 4 to 6</a></li>
+        <li><a onclick="goPage('prog')">Kids · Ages 7 and above</a></li>
+        <li><a onclick="goPage('prog')">Adults · All Levels</a></li>
+        <li><a onclick="goPage('prog')">Rates and Packages</a></li>
+        <li><a onclick="goPage('prog')">After School 2026</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <div class="ft-cl">The Club</div>
+      <ul>
+        <li><a href="https://www.kotapermai.com.my" target="_blank">Kota Permai KPGCC</a></li>
+        <li><a onclick="goPage('judogi')">Fighting Films Judogi</a></li>
+        <li><a onclick="goPage('phil')">The Cosmology of Judo</a></li>
+        <li><a onclick="goPage('contact')">Founding Membership</a></li>
+        <li><a onclick="goPage('contact')">Book a Trial</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span class="ft-copy">© 2025 Kota Permai Judo Club · Danau Permai Resort Berhad [199601006792] · All Rights Reserved · Fighting Films is a trademark of Fighting Films Ltd, United Kingdom.</span>
+    <span class="ft-kanji">柔道</span>
+  </div>
+</footer>
+
+<script>
+function goPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  const nl=document.getElementById('nl-'+id);
+  if(nl)nl.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(()=>observeFades(),120);
+}
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('on'),i*55);
+      io.unobserve(e.target);
+    }
+  });
+},{threshold:0.07});
+function observeFades(){document.querySelectorAll('.fi:not(.on)').forEach(el=>io.observe(el));}
+observeFades();
+function toggleDet(id){
+  const all=document.querySelectorAll('.det-panel');
+  const tgt=document.getElementById(id);
+  const isOpen=tgt.classList.contains('open');
+  all.forEach(d=>d.classList.remove('open'));
+  if(!isOpen){tgt.classList.add('open');setTimeout(()=>tgt.scrollIntoView({behavior:'smooth',block:'nearest'}),60);}
+}
+function dTab(btn,cid){
+  const wrap=btn.closest('.det-panel');
+  if(!wrap)return;
+  wrap.querySelectorAll('.det-tab').forEach(t=>t.classList.remove('on'));
+  wrap.querySelectorAll('.det-tc').forEach(c=>c.classList.add('hidden'));
+  btn.classList.add('on');
+  const tc=document.getElementById(cid);
+  if(tc)tc.classList.remove('hidden');
+}
+document.addEventListener('click',function(e){
+  if(e.target.classList.contains('sz')){
+    const row=e.target.closest('.sz-row');
+    if(row){row.querySelectorAll('.sz').forEach(b=>b.classList.remove('on'));e.target.classList.add('on');}
+  }
+});
+function selC(el){
+  const row=el.closest('.col-row');
+  row.querySelectorAll('.cs').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+}
+function scrollCh(id,btn){
+  document.querySelectorAll('.ch-link').forEach(l=>l.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+function handleForm(e){
+  e.preventDefault();
+  const btn=e.target.querySelector('.form-submit');
+  btn.textContent='Enquiry sent. We will be in touch.';
+  btn.style.background='#2B5430';
+}
+</script>
+</body>
+</html>
